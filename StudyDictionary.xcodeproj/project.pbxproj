@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B0039BC1347C24100606EF3 /* BetterDictionaryAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B0039BB1347C24100606EF3 /* BetterDictionaryAppDelegate.m */; };
+		0B0039BC1347C24100606EF3 /* StudyDictionaryAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B0039BB1347C24100606EF3 /* StudyDictionaryAppDelegate.m */; };
 		0B0039CC1347C28400606EF3 /* DictionarySearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B0039C21347C28400606EF3 /* DictionarySearchViewController.m */; };
 		0B0039CD1347C28400606EF3 /* DictionarySearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B0039C31347C28400606EF3 /* DictionarySearchViewController.xib */; };
 		0B0039CE1347C28400606EF3 /* WordDefinitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B0039C51347C28400606EF3 /* WordDefinitionViewController.m */; };
@@ -22,9 +22,6 @@
 		0B184CD81352556F00B111C9 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B184CD31352556F00B111C9 /* Icon@2x.png */; };
 		0B184CD91352556F00B111C9 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 0B184CD41352556F00B111C9 /* iTunesArtwork */; };
 		0B184CF81352926300B111C9 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B184CF71352926300B111C9 /* iAd.framework */; };
-		0B184D031352AE4000B111C9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B184D021352AE4000B111C9 /* AudioToolbox.framework */; };
-		0B184D051352AE4800B111C9 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B184D041352AE4800B111C9 /* MediaPlayer.framework */; };
-		0B184D071352AE5100B111C9 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B184D061352AE5100B111C9 /* MessageUI.framework */; };
 		0B3057491347C187003C0997 /* WordnikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B3057481347C187003C0997 /* WordnikUI.framework */; };
 		0B53F2F6134D6E5F00B61B41 /* book.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B53F2F2134D6E5F00B61B41 /* book.png */; };
 		0B53F2F7134D6E5F00B61B41 /* book@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B53F2F3134D6E5F00B61B41 /* book@2x.png */; };
@@ -50,9 +47,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0B0039BA1347C24100606EF3 /* BetterDictionaryAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetterDictionaryAppDelegate.h; sourceTree = "<group>"; };
-		0B0039BB1347C24100606EF3 /* BetterDictionaryAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetterDictionaryAppDelegate.m; sourceTree = "<group>"; };
-		0B0039BD1347C28300606EF3 /* BetterDictionaryConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetterDictionaryConstants.h; sourceTree = "<group>"; };
+		0B0039BA1347C24100606EF3 /* StudyDictionaryAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudyDictionaryAppDelegate.h; sourceTree = "<group>"; };
+		0B0039BB1347C24100606EF3 /* StudyDictionaryAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudyDictionaryAppDelegate.m; sourceTree = "<group>"; };
+		0B0039BD1347C28300606EF3 /* StudyDictionaryConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudyDictionaryConstants.h; sourceTree = "<group>"; };
 		0B0039C11347C28400606EF3 /* DictionarySearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionarySearchViewController.h; sourceTree = "<group>"; };
 		0B0039C21347C28400606EF3 /* DictionarySearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionarySearchViewController.m; sourceTree = "<group>"; };
 		0B0039C31347C28400606EF3 /* DictionarySearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DictionarySearchViewController.xib; path = Classes/DictionarySearchViewController.xib; sourceTree = "<group>"; };
@@ -70,9 +67,6 @@
 		0B184CD31352556F00B111C9 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Images/Icons/Icon@2x.png"; sourceTree = "<group>"; };
 		0B184CD41352556F00B111C9 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = Images/Icons/iTunesArtwork; sourceTree = "<group>"; };
 		0B184CF71352926300B111C9 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
-		0B184D021352AE4000B111C9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		0B184D041352AE4800B111C9 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		0B184D061352AE5100B111C9 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		0B3057481347C187003C0997 /* WordnikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WordnikUI.framework; path = "External/wordkit/frameworks/objective-c/Wordnik WordKit 1.0/iOS Framework/WordnikUI.framework"; sourceTree = "<group>"; };
 		0B53F2F2134D6E5F00B61B41 /* book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = book.png; path = Images/TabBar/book.png; sourceTree = "<group>"; };
 		0B53F2F3134D6E5F00B61B41 /* book@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "book@2x.png"; path = "Images/TabBar/book@2x.png"; sourceTree = "<group>"; };
@@ -88,7 +82,7 @@
 		0BE2A8C313519D6000188E66 /* svhud-error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "svhud-error@2x.png"; path = "External/SVProgressHUD/SVProgressHUD/Ressources/svhud-error@2x.png"; sourceTree = "<group>"; };
 		0BE2A8C413519D6000188E66 /* svhud-success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "svhud-success.png"; path = "External/SVProgressHUD/SVProgressHUD/Ressources/svhud-success.png"; sourceTree = "<group>"; };
 		0BE2A8C513519D6000188E66 /* svhud-success@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "svhud-success@2x.png"; path = "External/SVProgressHUD/SVProgressHUD/Ressources/svhud-success@2x.png"; sourceTree = "<group>"; };
-		0BF42CB1134FCD24003844D2 /* BetterDictionaryAPIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetterDictionaryAPIConstants.h; sourceTree = "<group>"; };
+		0BF42CB1134FCD24003844D2 /* StudyDictionaryAPIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudyDictionaryAPIConstants.h; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* StudyDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -107,9 +101,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B184D071352AE5100B111C9 /* MessageUI.framework in Frameworks */,
-				0B184D051352AE4800B111C9 /* MediaPlayer.framework in Frameworks */,
-				0B184D031352AE4000B111C9 /* AudioToolbox.framework in Frameworks */,
 				0B184CF81352926300B111C9 /* iAd.framework in Frameworks */,
 				0BE2A8C013518F5C00188E66 /* QuartzCore.framework in Frameworks */,
 				0B003A391347C60700606EF3 /* CoreFoundation.framework in Frameworks */,
@@ -131,10 +122,10 @@
 			isa = PBXGroup;
 			children = (
 				0BA5E76E134FB92200C55664 /* External */,
-				0B0039BA1347C24100606EF3 /* BetterDictionaryAppDelegate.h */,
-				0B0039BB1347C24100606EF3 /* BetterDictionaryAppDelegate.m */,
-				0B0039BD1347C28300606EF3 /* BetterDictionaryConstants.h */,
-				0BF42CB1134FCD24003844D2 /* BetterDictionaryAPIConstants.h */,
+				0B0039BA1347C24100606EF3 /* StudyDictionaryAppDelegate.h */,
+				0B0039BB1347C24100606EF3 /* StudyDictionaryAppDelegate.m */,
+				0B0039BD1347C28300606EF3 /* StudyDictionaryConstants.h */,
+				0BF42CB1134FCD24003844D2 /* StudyDictionaryAPIConstants.h */,
 				0B0039C11347C28400606EF3 /* DictionarySearchViewController.h */,
 				0B0039C21347C28400606EF3 /* DictionarySearchViewController.m */,
 				0B0039C41347C28400606EF3 /* WordDefinitionViewController.h */,
@@ -254,7 +245,6 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0B184D021352AE4000B111C9 /* AudioToolbox.framework */,
 				0B0039D21347C50800606EF3 /* CoreData.framework */,
 				0B003A381347C60700606EF3 /* CoreFoundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
@@ -262,8 +252,6 @@
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				0B184CF71352926300B111C9 /* iAd.framework */,
 				EA4C9A54132F5BE700B76158 /* libsqlite3.dylib */,
-				0B184D041352AE4800B111C9 /* MediaPlayer.framework */,
-				0B184D061352AE5100B111C9 /* MessageUI.framework */,
 				0BE2A8BF13518F5C00188E66 /* QuartzCore.framework */,
 				EA4C9A5A132F5C0E00B76158 /* SystemConfiguration.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
@@ -351,7 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
-				0B0039BC1347C24100606EF3 /* BetterDictionaryAppDelegate.m in Sources */,
+				0B0039BC1347C24100606EF3 /* StudyDictionaryAppDelegate.m in Sources */,
 				0B0039CC1347C28400606EF3 /* DictionarySearchViewController.m in Sources */,
 				0B0039CE1347C28400606EF3 /* WordDefinitionViewController.m in Sources */,
 				0B0039D01347C28400606EF3 /* WordHistoryViewController.m in Sources */,

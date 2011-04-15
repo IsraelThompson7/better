@@ -1,15 +1,15 @@
 //
 //  WordHistoryViewController.m
-//  BetterDictionary
+//  StudyDictionary
 //
 //  Created by James Weinert on 2/17/11.
 //  Copyright 2011 Weinert Works. All rights reserved.
 //
 
 #import "WordHistoryViewController.h"
-#import "BetterDictionaryAppDelegate.h"
+#import "StudyDictionaryAppDelegate.h"
 #import "WordDefinitionViewController.h"
-#import "BetterDictionaryConstants.h"
+#import "StudyDictionaryConstants.h"
 
 
 @implementation WordHistoryViewController
@@ -27,7 +27,7 @@
 }
 
 - (void)loadWordHistory {
-    BetterDictionaryAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    StudyDictionaryAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
 	NSManagedObjectContext *context = [appDelegate managedObjectContext];
 	
 	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:kEntityName inManagedObjectContext:context];
@@ -77,7 +77,7 @@
 
 
 - (void)removeWordFromHistory:(NSString *)word {
-	BetterDictionaryAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+	StudyDictionaryAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
 	NSManagedObjectContext *context = [appDelegate managedObjectContext];
 	
 	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:kEntityName inManagedObjectContext:context];

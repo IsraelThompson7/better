@@ -1,6 +1,6 @@
 //
-//  BetterDictionaryAppDelegate.h
-//  BetterDictionary
+//  StudyDictionaryAppDelegate.h
+//  StudyDictionary
 //
 //  Created by James Weinert on 2/12/11.
 //  Copyright 2011 Weinert Works. All rights reserved.
@@ -11,7 +11,7 @@
 #import <Wordnik/Wordnik.h>
 #import <Wordnik/WNClient.h>
 
-@interface BetterDictionaryAppDelegate : NSObject <UIApplicationDelegate> {
+@interface StudyDictionaryAppDelegate : NSObject <UIApplicationDelegate> {
     
     UIWindow *window;
 	UITabBarController *tabBarController;

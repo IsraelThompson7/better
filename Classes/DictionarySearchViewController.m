@@ -1,15 +1,15 @@
 //
 //  DictionarySearchViewController.m
-//  BetterDictionary
+//  StudyDictionary
 //
 //  Created by James Weinert on 2/23/11.
 //  Copyright 2011 Weinert Works. All rights reserved.
 //
 
 #import "DictionarySearchViewController.h"
-#import "BetterDictionaryAppDelegate.h"
+#import "StudyDictionaryAppDelegate.h"
 #import "WordDefinitionViewController.h"
-#import "BetterDictionaryConstants.h"
+#import "StudyDictionaryConstants.h"
 
 
 @implementation DictionarySearchViewController
@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    BetterDictionaryAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    StudyDictionaryAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     client = [appDelegate wordnikClient];
     [client addObserver: self];
 }
@@ -32,7 +32,7 @@
 #pragma mark UITableView data source and delegate methods
 
 - (void)updateWordHistory:(NSString *)wordLookedUp {
-	BetterDictionaryAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+	StudyDictionaryAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
 	NSManagedObjectContext *context = [appDelegate managedObjectContext];
 	NSError *error;
 	

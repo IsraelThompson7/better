@@ -1,16 +1,16 @@
 //
-//  BetterDictionaryAppDelegate.m
-//  BetterDictionary
+//  StudyDictionaryAppDelegate.m
+//  StudyDictionary
 //
 //  Created by James Weinert on 2/12/11.
 //  Copyright 2011 Weinert Works. All rights reserved.
 //
 
-#import "BetterDictionaryAppDelegate.h"
-#import "BetterDictionaryConstants.h"
-#import "BetterDictionaryAPIConstants.h"
+#import "StudyDictionaryAppDelegate.h"
+#import "StudyDictionaryConstants.h"
+#import "StudyDictionaryAPIConstants.h"
 
-@implementation BetterDictionaryAppDelegate
+@implementation StudyDictionaryAppDelegate
 
 @synthesize window;
 @synthesize tabBarController;

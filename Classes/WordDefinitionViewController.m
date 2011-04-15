@@ -1,6 +1,6 @@
 //
 //  WordDefinitionViewController.m
-//  BetterDictionary
+//  StudyDictionary
 //
 //  Created by James Weinert on 2/21/11.
 //  Copyright 2011 Weinert Works. All rights reserved.
@@ -10,8 +10,8 @@
 #import <Wordnik/WNClient.h>
 
 #import "WordDefinitionViewController.h"
-#import "BetterDictionaryAppDelegate.h"
-#import "BetterDictionaryAPIConstants.h"
+#import "StudyDictionaryAppDelegate.h"
+#import "StudyDictionaryAPIConstants.h"
 #import "SVProgressHUD.h"
 
 
@@ -43,7 +43,7 @@
                              requestSpellingSuggestions: YES
                                         elementRequests: elements];
     
-    BetterDictionaryAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    StudyDictionaryAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     WNClient *client = [appDelegate wordnikClient];
 
     [SVProgressHUD showInView:self.view];

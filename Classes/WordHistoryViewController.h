@@ -1,6 +1,6 @@
 //
 //  WordHistoryViewController.h
-//  BetterDictionary
+//  StudyDictionary
 //
 //  Created by James Weinert on 2/17/11.
 //  Copyright 2011 Weinert Works. All rights reserved.
