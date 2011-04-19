@@ -95,7 +95,7 @@
 	[self updateWordHistory:word];
 	
 	WordDefinitionViewController *wordDefViewController = [[WordDefinitionViewController alloc] 
-														   initWithNibName:@"WordDefinitionViewController" 
+														   initWithNibName:@"WordDefinitionView" 
 														   bundle:nil];
 	
 	wordDefViewController.wordToLookup = word;

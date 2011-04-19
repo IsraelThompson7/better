@@ -169,7 +169,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     WordDefinitionViewController *wordDefViewController = [[WordDefinitionViewController alloc] 
-														   initWithNibName:@"WordDefinitionViewController" 
+														   initWithNibName:@"WordDefinitionView" 
 														   bundle:nil];
 	
 	NSUInteger row = [indexPath row];
