@@ -9,17 +9,20 @@
 #import <UIKit/UIKit.h>
 #import <iAd/iAd.h>
 
+@class Word;
+
 @interface WordDefinitionViewController : UIViewController <ADBannerViewDelegate> {
 	UITextView *wordDefinitionView;
-	NSString *wordToLookup;
+	Word *wordToLookup;
     
     ADBannerView *adBannerView;
 }
 @property (nonatomic, retain) IBOutlet UITextView *wordDefinitionView;
-@property (nonatomic, retain) NSString *wordToLookup;
+@property (nonatomic, retain) Word *wordToLookup;
 
 @property (nonatomic, retain) IBOutlet ADBannerView *adBannerView;
 
 - (void)updateDefinition;
+- (IBAction)addWordToList:(id)sender;
 
 @end

@@ -109,16 +109,16 @@
 						<object class="IBUIViewController" id="774880683">
 							<reference key="IBUIToolbarItems" ref="0"/>
 							<object class="IBUINavigationItem" key="IBUINavigationItem" id="572106120">
-								<string key="IBUITitle">Word History</string>
+								<string key="IBUITitle">Word Lists</string>
 								<object class="IBUIBarButtonItem" key="IBUIBackBarButtonItem" id="876148692">
-									<string key="IBUITitle">History</string>
+									<string key="IBUITitle">Lists</string>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 									<int key="IBUIStyle">1</int>
 								</object>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
 							<reference key="IBUIParentViewController" ref="842319040"/>
-							<string key="IBUINibName">WordHistoryView</string>
+							<string key="IBUINibName">WordListView</string>
 							<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 								<int key="IBUIInterfaceOrientation">1</int>
 								<int key="interfaceOrientation">1</int>
@@ -391,7 +391,7 @@
 					<string>{{337, 475}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>WordHistoryViewController</string>
+					<string>WordListViewController</string>
 					<string>DictionarySearchViewController</string>
 					<string>StudyDictionaryAppDelegate</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>

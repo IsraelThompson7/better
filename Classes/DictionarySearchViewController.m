@@ -10,6 +10,8 @@
 #import "StudyDictionaryAppDelegate.h"
 #import "WordDefinitionViewController.h"
 #import "StudyDictionaryConstants.h"
+#import "List.h"
+#import "Word.h"
 
 
 @implementation DictionarySearchViewController
@@ -31,41 +33,70 @@
 #pragma mark -
 #pragma mark UITableView data source and delegate methods
 
-- (void)updateWordHistory:(NSString *)wordLookedUp {
+- (Word *)updateWordHistory:(NSString *)wordLookedUp {
 	StudyDictionaryAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
 	NSManagedObjectContext *context = [appDelegate managedObjectContext];
 	NSError *error;
+    
 	
 	NSFetchRequest *request = [[NSFetchRequest alloc] init];
-	
-	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:kEntityName inManagedObjectContext:context];
+    	
+	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:kListEntityName inManagedObjectContext:context];
 	[request setEntity:entityDescription];
 	
     // Using kWordKey instead of "word" causes errors here. Oddness.
-	NSPredicate *pred = [NSPredicate predicateWithFormat:@"(word = %@)", wordLookedUp];
+	NSPredicate *pred = [NSPredicate predicateWithFormat:@"(listName = %@)", kDefaultListName];
 	[request setPredicate:pred];
-	
-	NSManagedObject *word = nil;
-	
-	NSArray *objects = [context executeFetchRequest:request error:&error];
-	
-	if(objects == nil) {
+    
+    NSArray *listObjects = [context executeFetchRequest:request error:&error];
+    
+    List *list = nil;
+    if(listObjects == nil) {
 		NSLog(@"%@ %@, %@", kErrorUnableToUpdateWordHistory, error, [error userInfo]);
 		
 	} else {
-        if ([objects count] > 0)
-            word = [objects objectAtIndex:0];
-        else 
-            word = [NSEntityDescription insertNewObjectForEntityForName:kEntityName inManagedObjectContext:context];
+        if ([listObjects count] > 0) {
+            list = [listObjects objectAtIndex:0];
+        } else {
+            list = [NSEntityDescription insertNewObjectForEntityForName:kListEntityName inManagedObjectContext:context];
+            list.listName = @"All";
+        }
+    }
 	
-        int count = [[word valueForKey:kCountKey] intValue];
+    //[request 
+	entityDescription = [NSEntityDescription entityForName:kWordEntityName inManagedObjectContext:context];
+	[request setEntity:entityDescription];
+	
+    // Using kWordKey instead of "word" causes errors here. Oddness.
+	pred = [NSPredicate predicateWithFormat:@"(word = %@)", wordLookedUp];
+	[request setPredicate:pred];
+	
+	NSArray *wordObjects = [context executeFetchRequest:request error:&error];
+
+	Word *word = nil;
+	if(wordObjects == nil) {
+		NSLog(@"%@ %@, %@", kErrorUnableToUpdateWordHistory, error, [error userInfo]);
+		
+	} else {
+        if ([wordObjects count] > 0) {
+            word = [wordObjects objectAtIndex:0];
+        } else {
+            word = [NSEntityDescription insertNewObjectForEntityForName:kWordEntityName inManagedObjectContext:context];
+        }
+	
+        int count = [word.lookupCount intValue];
         count++;
-	
-        [word setValue:wordLookedUp forKey:kWordKey];
-        [word setValue:[NSNumber numberWithInt:count] forKey:kCountKey];
+        	
+        word.word = wordLookedUp;
+        word.lookupCount = [NSNumber numberWithInt:count];
+        if (![word.belongsToList containsObject:list]) {
+            [word addBelongsToListObject:list];
+        }
+        
         [context save:&error];
     }
  	[request release];
+    return word;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -90,9 +121,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	NSUInteger row = [indexPath row];
-	NSString *word = [searchResults objectAtIndex:row];
+	NSString *wordToLookup = [searchResults objectAtIndex:row];
 	
-	[self updateWordHistory:word];
+	Word *word = [self updateWordHistory:wordToLookup];
 	
 	WordDefinitionViewController *wordDefViewController = [[WordDefinitionViewController alloc] 
 														   initWithNibName:@"WordDefinitionView" 

@@ -10,9 +10,11 @@
 #import <Wordnik/WNClient.h>
 
 #import "WordDefinitionViewController.h"
+#import "ListSelectViewController.h"
 #import "StudyDictionaryAppDelegate.h"
 #import "StudyDictionaryAPIConstants.h"
 #import "SVProgressHUD.h"
+#import "Word.h"
 
 
 @implementation WordDefinitionViewController
@@ -21,10 +23,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	self.title = wordToLookup;
+	self.title = wordToLookup.word;
+    
+    UIBarButtonItem *addToListButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd 
+                                                                                     target:self 
+                                                                                     action:@selector(addWordToList:)];
+
+    self.navigationItem.rightBarButtonItem = addToListButton;
+    [addToListButton release];
     
     adBannerView.delegate = self;
 }
+
 
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
@@ -33,12 +43,13 @@
     }
 }
 
+
 - (void)updateDefinition {
 	NSArray *elements = [NSArray arrayWithObjects:
                          [WNWordDefinitionRequest requestWithDictionary:[WNDictionary wordnetDictionary]],
                          [WNWordExampleRequest request],
                          nil];
-    WNWordRequest *req = [WNWordRequest requestWithWord: wordToLookup
+    WNWordRequest *req = [WNWordRequest requestWithWord: wordToLookup.word
                                    requestCanonicalForm: YES
                              requestSpellingSuggestions: YES
                                         elementRequests: elements];
@@ -102,6 +113,17 @@
 }
 
 
+- (IBAction)addWordToList:(id)sender {
+    ListSelectViewController *listSelViewController = [[ListSelectViewController alloc]
+                                                       initWithNibName:@"ListSelectView"
+                                                       bundle:nil];
+
+    listSelViewController.word = wordToLookup;
+    [self.navigationController pushViewController:listSelViewController animated:YES];
+    [listSelViewController release];
+}
+
+
 #pragma mark -
 #pragma mark ADBannerViewDelegate methods
 
@@ -134,6 +156,7 @@
     [self updateiADBannerViewPosition:YES];
 }
 
+
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
     NSLog(@"bannerView didFailToReceiveAd");
     [self updateiADBannerViewPosition:YES];
@@ -143,10 +166,10 @@
 #pragma mark -
 #pragma mark Memory management
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+
 
 - (void)viewDidUnload {
     [super viewDidUnload];

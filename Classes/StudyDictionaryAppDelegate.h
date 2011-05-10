@@ -11,6 +11,8 @@
 #import <Wordnik/Wordnik.h>
 #import <Wordnik/WNClient.h>
 
+#import "Debug.h"
+
 @interface StudyDictionaryAppDelegate : NSObject <UIApplicationDelegate> {
     
     UIWindow *window;
@@ -34,6 +36,7 @@
 @property (nonatomic, retain, readonly) WNClient *wordnikClient_;
 
 - (NSURL *)applicationDocumentsDirectory;
+- (WNClient *)wordnikClient;
 - (void)saveContext;
 
 @end
