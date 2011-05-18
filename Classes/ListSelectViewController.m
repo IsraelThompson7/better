@@ -91,7 +91,7 @@
         static NSString *NewCellIdentifier = @"NewListCell";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NewCellIdentifier];
         if (cell == nil) {
-            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:NewCellIdentifier] autorelease];
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NewCellIdentifier] autorelease];
         }
         
         cell.textLabel.text = @"Add New List";
@@ -281,7 +281,7 @@
 #pragma mark Editing text fields
 
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
-    
+    if (textField.tag >= [lists count]) return YES;
 	List *list = [lists objectAtIndex:textField.tag];
 	list.listName = textField.text;
 	
