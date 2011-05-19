@@ -12,6 +12,7 @@
 
 @implementation List
 @dynamic listName;
+@dynamic listIndex;
 @dynamic listContents;
 
 - (void)addListContentsObject:(Word *)value {    

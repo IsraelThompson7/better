@@ -165,7 +165,18 @@
         return persistentStoreCoordinator_;
     }
     
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"StudyDictionary.sqlite"];
+    NSString *storePath = [[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"StudyDictionary.sqlite"];
+	
+	NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+	if (![fileManager fileExistsAtPath:storePath]) {
+		NSString *defaultStorePath = [[NSBundle mainBundle] pathForResource:@"StudyDictionary" ofType:@"sqlite"];
+		if (defaultStorePath) {
+			[fileManager copyItemAtPath:defaultStorePath toPath:storePath error:NULL];
+		}
+	}
+    
+    NSURL *storeURL = [NSURL fileURLWithPath:storePath];
     
     NSError *error = nil;
     persistentStoreCoordinator_ = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
@@ -188,11 +199,15 @@
 #pragma mark Application's Documents directory
 
 /**
- Returns the URL to the application's Documents directory.
+ Returns the path to the application's Documents directory.
  */
-- (NSURL *)applicationDocumentsDirectory {
-    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+- (NSString *)applicationDocumentsDirectory {
+	
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
+    return basePath;
 }
+
 
 
 #pragma mark -

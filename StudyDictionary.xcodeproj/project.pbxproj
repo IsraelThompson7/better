@@ -39,6 +39,7 @@
 		0B7A5F221355157D0086FD35 /* StudyDictionary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A5F201355157D0086FD35 /* StudyDictionary.xcdatamodeld */; };
 		0B9C26FD1378C47E00EF56E4 /* EditableTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C26FC1378C47E00EF56E4 /* EditableTableViewCell.m */; };
 		0B9C27001378C49300EF56E4 /* EditableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B9C26FF1378C49300EF56E4 /* EditableTableViewCell.xib */; };
+		0BC40B9B1385D438004376F8 /* StudyDictionary.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0BC40B9A1385D438004376F8 /* StudyDictionary.sqlite */; };
 		0BE2A8B613518E5F00188E66 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BE2A8B513518E5F00188E66 /* SVProgressHUD.m */; };
 		0BE2A8C013518F5C00188E66 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BE2A8BF13518F5C00188E66 /* QuartzCore.framework */; };
 		0BE2A8C613519D6000188E66 /* svhud-error.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BE2A8C213519D6000188E66 /* svhud-error.png */; };
@@ -99,6 +100,7 @@
 		0B9C26FB1378C47E00EF56E4 /* EditableTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditableTableViewCell.h; sourceTree = "<group>"; };
 		0B9C26FC1378C47E00EF56E4 /* EditableTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditableTableViewCell.m; sourceTree = "<group>"; };
 		0B9C26FF1378C49300EF56E4 /* EditableTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EditableTableViewCell.xib; path = Classes/EditableTableViewCell.xib; sourceTree = "<group>"; };
+		0BC40B9A1385D438004376F8 /* StudyDictionary.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = StudyDictionary.sqlite; sourceTree = "<group>"; };
 		0BE2A8B413518E5F00188E66 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = External/SVProgressHUD/SVProgressHUD/SVProgressHUD.h; sourceTree = SOURCE_ROOT; };
 		0BE2A8B513518E5F00188E66 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = External/SVProgressHUD/SVProgressHUD/SVProgressHUD.m; sourceTree = SOURCE_ROOT; };
 		0BE2A8BF13518F5C00188E66 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -275,6 +277,7 @@
 				0B4174241363837200336DF5 /* WordListView.xib */,
 				0B0039C91347C28400606EF3 /* WordListDetailView.xib */,
 				EA4C99F6132F5B0400B76158 /* MainWindow.xib */,
+				0BC40B9A1385D438004376F8 /* StudyDictionary.sqlite */,
 				0B7A5F201355157D0086FD35 /* StudyDictionary.xcdatamodeld */,
 				8D1107310486CEB800E47090 /* StudyDictionary-Info.plist */,
 			);
@@ -370,6 +373,7 @@
 				0B4174261363837200336DF5 /* WordListView.xib in Resources */,
 				0B46C93313679AF1000E58EA /* ListSelectView.xib in Resources */,
 				0B9C27001378C49300EF56E4 /* EditableTableViewCell.xib in Resources */,
+				0BC40B9B1385D438004376F8 /* StudyDictionary.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

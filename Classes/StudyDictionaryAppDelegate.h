@@ -35,7 +35,7 @@
 
 @property (nonatomic, retain, readonly) WNClient *wordnikClient_;
 
-- (NSURL *)applicationDocumentsDirectory;
+- (NSString *)applicationDocumentsDirectory;
 - (WNClient *)wordnikClient;
 - (void)saveContext;
 

@@ -15,6 +15,7 @@
 @private
 }
 @property (nonatomic, retain) NSString * listName;
+@property (nonatomic, retain) NSNumber * listIndex;
 @property (nonatomic, retain) NSSet* listContents;
 
 - (void)addListContentsObject:(Word *)value;

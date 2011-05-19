@@ -61,10 +61,10 @@
         } else {
             list = [NSEntityDescription insertNewObjectForEntityForName:kListEntityName inManagedObjectContext:context];
             list.listName = kDefaultListName;
+            list.listIndex = [NSNumber numberWithInt:0];
         }
     }
 	
-    //[request 
 	entityDescription = [NSEntityDescription entityForName:kWordEntityName inManagedObjectContext:context];
 	[request setEntity:entityDescription];
 	

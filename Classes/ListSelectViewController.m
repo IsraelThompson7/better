@@ -40,8 +40,11 @@
 	NSManagedObjectContext *context = [appDelegate managedObjectContext];
 	
 	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:kListEntityName inManagedObjectContext:context];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"listIndex" ascending:YES];
+    
 	NSFetchRequest *request = [[NSFetchRequest alloc] init];
 	[request setEntity:entityDescription];
+    [request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
     
 	NSError *error;
 	NSArray *objects = [context executeFetchRequest:request error:&error];
@@ -63,6 +66,7 @@
     }
     
 	[request release];
+    [sortDescriptor release];
 	
 	[self.tableView reloadData];
 }
@@ -115,6 +119,8 @@
     
     cell.textField.tag = row;
     List *list = [lists objectAtIndex:row];
+    
+    NSLog([NSString stringWithFormat:@"%@ %d", list.listName, [list.listIndex intValue]]);
     cell.textField.text = list.listName;
     
     if ([word.belongsToList containsObject:list]) {
@@ -237,6 +243,8 @@
     [lists addObject:list];
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[lists count] - 1 inSection:0];
+    list.listIndex = [NSNumber numberWithInt:[indexPath row]];
+    
     UITableViewRowAnimation animationStyle = UITableViewRowAnimationNone;
     if (animated) {
         animationStyle = UITableViewRowAnimationFade;
