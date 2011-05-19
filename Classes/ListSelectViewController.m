@@ -15,6 +15,7 @@
 
 
 @implementation ListSelectViewController
+
 @synthesize editableTableViewCell;
 @synthesize lists, word;
 
@@ -23,6 +24,8 @@
 #pragma mark View lifecycle
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
+    
     self.tableView.allowsSelectionDuringEditing = YES;
     self.title = @"Word Lists";
        
@@ -84,7 +87,6 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
 	NSUInteger row = [indexPath row]; 
     
     if (row == [lists count]) {
@@ -101,13 +103,14 @@
         return cell;
     }
     
-    static NSString *CellIdentifier = @"ListSelectCell";
+    static NSString *CellIdentifier = @"ListCell";
     
     EditableTableViewCell *cell = (EditableTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         [[NSBundle mainBundle] loadNibNamed:@"EditableTableViewCell" owner:self options:nil];
 		cell = editableTableViewCell;
 		self.editableTableViewCell = nil;
+        cell.textField.placeholder = @"New List";
     }
     
     cell.textField.tag = row;
@@ -126,7 +129,20 @@
 
 
 #pragma mark -
-#pragma mark Editing rows
+#pragma mark Editing Talble Rows
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSUInteger row = [indexPath row];
+    
+    if (row < [lists count]) {
+        List *list = [lists objectAtIndex:row];
+        if ([list.listName isEqualToString:kDefaultListName])
+            return NO;
+    }
+    
+    return self.editing;
+}
+
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.row == [lists count]) {

@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <Wordnik/Wordnik.h>
-#import "Word.h"
 
+@class Word;
 
 @interface DictionarySearchViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, WNClientObserver> {
 	UISearchBar *searchBar;

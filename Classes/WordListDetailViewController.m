@@ -15,7 +15,7 @@
 
 
 @implementation WordListDetailViewController
-@synthesize table;
+
 @synthesize listContents, list;
 
 
@@ -46,7 +46,7 @@
     
     [listObjects release];
     
-	[table reloadData];
+	[self.tableView reloadData];
 }
 
 
@@ -97,7 +97,7 @@
         [context deleteObject:word];
         [listContents removeObject:word];
 		
-        [table deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
         
         NSError *error = nil;
 		if (![context save:&error]) {
@@ -140,13 +140,11 @@
 
 
 - (void)viewDidUnload {
-	self.table = nil;
 	self.listContents = nil;
 }
 
 
 - (void)dealloc {
-	[table release];
 	[listContents release];
     [super dealloc];
 }

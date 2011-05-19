@@ -15,6 +15,7 @@
 
 
 @implementation DictionarySearchViewController
+
 @synthesize searchBar, searchResults;
 
 
@@ -59,7 +60,7 @@
             list = [listObjects objectAtIndex:0];
         } else {
             list = [NSEntityDescription insertNewObjectForEntityForName:kListEntityName inManagedObjectContext:context];
-            list.listName = @"All";
+            list.listName = kDefaultListName;
         }
     }
 	
@@ -98,6 +99,7 @@
  	[request release];
     return word;
 }
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	return [searchResults count];

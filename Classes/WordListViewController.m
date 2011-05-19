@@ -11,15 +11,26 @@
 #import "WordListDetailViewController.h"
 #import "StudyDictionaryConstants.h"
 #import "List.h"
+#import "EditableTableViewCell.h"
 
 
 @implementation WordListViewController
+
 @synthesize table;
-@synthesize lists;
+@synthesize editableTableViewCell, lists;
 
 
 #pragma mark -
 #pragma mark View lifecycle
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.title = @"Word Lists";
+    
+    self.tableView.allowsSelectionDuringEditing = YES;
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
 
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -71,34 +82,123 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [lists count];
+    NSUInteger count = [lists count];
+    if(self.editing) {
+        count++;
+    }
+    
+    return count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSUInteger row = [indexPath row]; 
     
-    static NSString *CellIdentifier = @"WordListCell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
+    if (row == [lists count]) {
+        static NSString *NewCellIdentifier = @"NewListCell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NewCellIdentifier];
+        if (cell == nil) {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NewCellIdentifier] autorelease];
+        }
+        
+        cell.textLabel.text = @"Add New List";
+        cell.textLabel.textColor = [UIColor grayColor];
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        
+        return cell;
     }
     
-	NSUInteger row = [indexPath row]; 
+    static NSString *CellIdentifier = @"ListCell";
+    
+    EditableTableViewCell *cell = (EditableTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        [[NSBundle mainBundle] loadNibNamed:@"EditableTableViewCell" owner:self options:nil];
+		cell = editableTableViewCell;
+		self.editableTableViewCell = nil;
+        cell.textField.placeholder = @"New List";
+    }
+    
+    cell.textField.tag = row;
     List *list = [lists objectAtIndex:row];
-    cell.textLabel.text = list.listName;
-	
+    cell.textField.text = list.listName;
+    
     return cell;
 }
 
 
+#pragma mark -
+#pragma mark Editing Table Rows
+
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
+    NSUInteger row = [indexPath row];
+    
+    if (row < [lists count]) {
+        List *list = [lists objectAtIndex:row];
+        if ([list.listName isEqualToString:kDefaultListName])
+            return NO;
+    }
+    
+    return self.editing;
+}
+
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+	if (indexPath.row == [lists count]) {
+		return UITableViewCellEditingStyleInsert;
+	}
+    return UITableViewCellEditingStyleDelete;
+}
+
+
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
+    [super setEditing:editing animated:animated];
+    
+	// Don't show the Back button while editing.
+	[self.navigationItem setHidesBackButton:editing animated:YES];
+    
+	
+	[self.tableView beginUpdates];
+	
+    NSUInteger count = [lists count];
+    
+    NSArray *listInsertIndexPath = [NSArray arrayWithObject:[NSIndexPath indexPathForRow:count inSection:0]];
+    
+    UITableViewRowAnimation animationStyle = UITableViewRowAnimationNone;
+	if (editing) {
+		if (animated) {
+			animationStyle = UITableViewRowAnimationFade;
+		}
+		[self.tableView insertRowsAtIndexPaths:listInsertIndexPath withRowAnimation:animationStyle];
+	}
+	else {
+        [self.tableView deleteRowsAtIndexPaths:listInsertIndexPath withRowAnimation:UITableViewRowAnimationFade];
+    }
+    
+    [self.tableView endUpdates];
+	
+	// If editing is finished, save the managed object context.
+	
+	if (!editing) {
+		StudyDictionaryAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+        NSManagedObjectContext *context = [appDelegate managedObjectContext];
+		NSError *error = nil;
+		if (![context save:&error]) {
+			NSLog(@"%@ %@, %@", kErrorUnableToDeleteList, error, [error userInfo]);
+            
+            NSString *message = [[NSString alloc] initWithString:kErrorCoreDataMessageForUser];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            
+            [alert show];
+            [alert release];
+            [message release];
+		}
+	}
+    
 }
 
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    StudyDictionaryAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+	StudyDictionaryAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
 	NSManagedObjectContext *context = [appDelegate managedObjectContext];
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -107,9 +207,9 @@
 		List *list = [lists objectAtIndex:row];
         
         [context deleteObject:list];
-        [lists removeObject:list];
+        [lists removeObjectAtIndex:row];
 		
-        [table deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
         
         NSError *error = nil;
 		if (![context save:&error]) {
@@ -122,12 +222,45 @@
             [alert release];
             [message release];
 		}
-    }  
+    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        [self insertListAnimated:YES];
+    }
+}
+
+
+- (void)insertListAnimated:(BOOL)animated {
+    StudyDictionaryAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+	NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    
+    List *list = [NSEntityDescription insertNewObjectForEntityForName:kListEntityName inManagedObjectContext:context];
+    
+    list.listName = @"";
+    
+    [lists addObject:list];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[lists count] - 1 inSection:0];
+    UITableViewRowAnimation animationStyle = UITableViewRowAnimationNone;
+    if (animated) {
+        animationStyle = UITableViewRowAnimationFade;
+    }
+    
+    [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:animationStyle];
+    EditableTableViewCell *cell = (EditableTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+    
+    [cell.textField becomeFirstResponder];
 }
 
 
 #pragma mark -
 #pragma mark Table view delegate
+
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	if (indexPath.row == [lists count]) {
+		return nil;
+	}
+	return indexPath;
+}
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     WordListDetailViewController *wordListViewController = [[WordListDetailViewController alloc] 
@@ -140,6 +273,24 @@
     [self.navigationController pushViewController:wordListViewController animated:YES];
     [wordListViewController release];
     
+}
+
+
+#pragma mark -
+#pragma mark Editing text fields
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+    if (textField.tag >= [lists count]) return YES;
+	List *list = [lists objectAtIndex:textField.tag];
+	list.listName = textField.text;
+	
+	return YES;
+}	
+
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {	
+	[textField resignFirstResponder];
+	return YES;	
 }
 
 

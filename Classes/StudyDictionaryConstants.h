@@ -7,7 +7,7 @@
 //
 
 // Default List Name
-#define kDefaultListName   @"All"
+#define kDefaultListName   @"Recent Words"
 
 // Core Data Keys
 #define kWordEntityName @"Word"

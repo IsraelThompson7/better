@@ -8,16 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-#import "List.h"
-
+@class List;
 
 @interface WordListDetailViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate> {
-	UITableView *table;
-
     List *list;
 	NSMutableArray *listContents;
 }
-@property (nonatomic, retain) IBOutlet UITableView *table;
 @property (nonatomic, retain) NSMutableArray *listContents;
 @property (nonatomic, retain) List *list;
 

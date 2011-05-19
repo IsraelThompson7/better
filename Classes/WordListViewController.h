@@ -8,15 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@class EditableTableViewCell;
 
-@interface WordListViewController : UITableViewController {
+@interface WordListViewController : UITableViewController <UITextFieldDelegate> {
     UITableView *table;
     
+    EditableTableViewCell *editableTableViewCell;
 	NSMutableArray *lists;
 }
+@property (nonatomic, assign) IBOutlet EditableTableViewCell *editableTableViewCell;
 @property (nonatomic, retain) IBOutlet UITableView *table;
 @property (nonatomic, retain) NSMutableArray *lists;
 
 - (void)loadLists;
+- (void)insertListAnimated:(BOOL)animated;
 
 @end
