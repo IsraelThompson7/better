@@ -124,7 +124,6 @@
     
     cell.textField.tag = row;
     List *list = [lists objectAtIndex:row];
-    NSLog([NSString stringWithFormat:@"%@ %d", list.listName, [list.listIndex intValue]]);
     cell.textField.text = list.listName;
     
     return cell;
@@ -286,12 +285,11 @@
 #pragma mark -
 #pragma mark Editing text fields
 
-- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
-    if (textField.tag >= [lists count]) return YES;
-	List *list = [lists objectAtIndex:textField.tag];
-	list.listName = textField.text;
-	
-	return YES;
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    if (textField.tag < [lists count]) {
+        List *list = [lists objectAtIndex:textField.tag];
+        list.listName = textField.text;
+    }
 }	
 
 
