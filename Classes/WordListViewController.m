@@ -288,8 +288,31 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     if (textField.tag < [lists count]) {
         List *list = [lists objectAtIndex:textField.tag];
-        list.listName = textField.text;
-    }
+        
+        NSString *finalListText = [[NSString alloc] initWithString:textField.text];
+        
+        if ([finalListText length] == 0) {
+            finalListText = @"Unnamed Word List";
+        }
+        
+        NSString *tempListText = [[NSString alloc] initWithString:finalListText];
+        int i = 1;
+        BOOL hasSameName;
+        do {
+            hasSameName = NO;
+            for (List *listObject in lists) {
+                if ([finalListText isEqualToString:listObject.listName]) {
+                    hasSameName = YES;
+                    finalListText = [tempListText stringByAppendingString:[NSString stringWithFormat:@" %d", i]];
+                    i++;
+                    break;
+                }
+            }
+        } while (hasSameName);
+        
+        list.listName = finalListText;
+        textField.text = finalListText;
+    } 
 }	
 
 
