@@ -32,6 +32,17 @@
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     [self loadLists];
+    didViewJustLoad = YES;
+}
+
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if (!didViewJustLoad) {
+        [self loadLists];
+    }
+    
+    didViewJustLoad = NO;
 }
 
 

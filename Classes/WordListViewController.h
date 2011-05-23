@@ -15,6 +15,7 @@
     
     EditableTableViewCell *editableTableViewCell;
 	NSMutableArray *lists;
+    BOOL didViewJustLoad;
 }
 @property (nonatomic, assign) IBOutlet EditableTableViewCell *editableTableViewCell;
 @property (nonatomic, retain) IBOutlet UITableView *table;

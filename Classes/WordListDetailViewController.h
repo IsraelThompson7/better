@@ -13,6 +13,7 @@
 @interface WordListDetailViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate> {
     List *list;
 	NSMutableArray *listContents;
+    BOOL didViewJustLoad;
 }
 @property (nonatomic, retain) NSMutableArray *listContents;
 @property (nonatomic, retain) List *list;

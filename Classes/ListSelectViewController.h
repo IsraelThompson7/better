@@ -15,6 +15,7 @@
     
 	NSMutableArray *lists;
     Word *word;
+    BOOL didViewJustLoad;
 }
 @property (nonatomic, assign) IBOutlet EditableTableViewCell *editableTableViewCell;
 @property (nonatomic, retain) NSMutableArray *lists;

@@ -30,13 +30,19 @@
     
     self.tableView.allowsSelectionDuringEditing = YES;
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    [self loadLists];
+    didViewJustLoad = YES;
 }
 
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self loadLists];
-    [Debug printCoreDataObjects];
+    if (!didViewJustLoad) {
+        [self loadLists];
+    }
+    
+    didViewJustLoad = NO;
 }
 
 

@@ -26,12 +26,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = list.listName;
+    
+    [self loadWordList];
+    didViewJustLoad = YES;
 }
 
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self loadWordList];
+    if (!didViewJustLoad) {
+        [self loadWordList];
+    }
+    
+    didViewJustLoad = NO;
 }
 
 
