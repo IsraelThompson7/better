@@ -295,7 +295,7 @@
     if (textField.tag < [lists count]) {
         List *list = [lists objectAtIndex:textField.tag];
         
-        NSString *finalListText = [[NSString alloc] initWithString:textField.text];
+        NSString *finalListText = [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         
         if ([finalListText length] == 0) {
             finalListText = @"Unnamed Word List";
@@ -307,7 +307,7 @@
         do {
             hasSameName = NO;
             for (List *listObject in lists) {
-                if ([finalListText isEqualToString:listObject.listName]) {
+                if (![list isEqual:listObject] && [finalListText isEqualToString:listObject.listName]) {
                     hasSameName = YES;
                     finalListText = [tempListText stringByAppendingString:[NSString stringWithFormat:@" %d", i]];
                     i++;
