@@ -16,6 +16,7 @@
 		0B0039D11347C28400606EF3 /* WordListDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B0039C91347C28400606EF3 /* WordListDetailView.xib */; };
 		0B0039D31347C50800606EF3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B0039D21347C50800606EF3 /* CoreData.framework */; };
 		0B003A391347C60700606EF3 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B003A381347C60700606EF3 /* CoreFoundation.framework */; };
+		0B045E36138C6F2100117949 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0B045E35138C6F2100117949 /* SVProgressHUD.bundle */; };
 		0B055DDC13691AF900104D7B /* Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B055DDB13691AF900104D7B /* Debug.m */; };
 		0B184CD51352556F00B111C9 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B184CD01352556F00B111C9 /* Icon-Small.png */; };
 		0B184CD61352556F00B111C9 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B184CD11352556F00B111C9 /* Icon-Small@2x.png */; };
@@ -42,10 +43,6 @@
 		0BC40B9B1385D438004376F8 /* StudyDictionary.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0BC40B9A1385D438004376F8 /* StudyDictionary.sqlite */; };
 		0BE2A8B613518E5F00188E66 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BE2A8B513518E5F00188E66 /* SVProgressHUD.m */; };
 		0BE2A8C013518F5C00188E66 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BE2A8BF13518F5C00188E66 /* QuartzCore.framework */; };
-		0BE2A8C613519D6000188E66 /* svhud-error.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BE2A8C213519D6000188E66 /* svhud-error.png */; };
-		0BE2A8C713519D6000188E66 /* svhud-error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BE2A8C313519D6000188E66 /* svhud-error@2x.png */; };
-		0BE2A8C813519D6000188E66 /* svhud-success.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BE2A8C413519D6000188E66 /* svhud-success.png */; };
-		0BE2A8C913519D6000188E66 /* svhud-success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BE2A8C513519D6000188E66 /* svhud-success@2x.png */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -71,6 +68,7 @@
 		0B0039C91347C28400606EF3 /* WordListDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WordListDetailView.xib; path = Classes/WordListDetailView.xib; sourceTree = "<group>"; };
 		0B0039D21347C50800606EF3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		0B003A381347C60700606EF3 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		0B045E35138C6F2100117949 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = External/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
 		0B055DDA13691AF900104D7B /* Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Debug.h; sourceTree = "<group>"; };
 		0B055DDB13691AF900104D7B /* Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Debug.m; sourceTree = "<group>"; };
 		0B184CD01352556F00B111C9 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "Images/Icons/Icon-Small.png"; sourceTree = "<group>"; };
@@ -104,10 +102,6 @@
 		0BE2A8B413518E5F00188E66 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = External/SVProgressHUD/SVProgressHUD/SVProgressHUD.h; sourceTree = SOURCE_ROOT; };
 		0BE2A8B513518E5F00188E66 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = External/SVProgressHUD/SVProgressHUD/SVProgressHUD.m; sourceTree = SOURCE_ROOT; };
 		0BE2A8BF13518F5C00188E66 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		0BE2A8C213519D6000188E66 /* svhud-error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "svhud-error.png"; path = "External/SVProgressHUD/SVProgressHUD/Ressources/svhud-error.png"; sourceTree = "<group>"; };
-		0BE2A8C313519D6000188E66 /* svhud-error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "svhud-error@2x.png"; path = "External/SVProgressHUD/SVProgressHUD/Ressources/svhud-error@2x.png"; sourceTree = "<group>"; };
-		0BE2A8C413519D6000188E66 /* svhud-success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "svhud-success.png"; path = "External/SVProgressHUD/SVProgressHUD/Ressources/svhud-success.png"; sourceTree = "<group>"; };
-		0BE2A8C513519D6000188E66 /* svhud-success@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "svhud-success@2x.png"; path = "External/SVProgressHUD/SVProgressHUD/Ressources/svhud-success@2x.png"; sourceTree = "<group>"; };
 		0BF42CB1134FCD24003844D2 /* StudyDictionaryAPIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudyDictionaryAPIConstants.h; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* StudyDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,10 +223,7 @@
 		0BE2A8C113519D4000188E66 /* SVProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
-				0BE2A8C213519D6000188E66 /* svhud-error.png */,
-				0BE2A8C313519D6000188E66 /* svhud-error@2x.png */,
-				0BE2A8C413519D6000188E66 /* svhud-success.png */,
-				0BE2A8C513519D6000188E66 /* svhud-success@2x.png */,
+				0B045E35138C6F2100117949 /* SVProgressHUD.bundle */,
 			);
 			name = SVProgressHUD;
 			sourceTree = "<group>";
@@ -359,10 +350,6 @@
 				0B53F2F7134D6E5F00B61B41 /* book@2x.png in Resources */,
 				0B53F2F8134D6E5F00B61B41 /* notepad.png in Resources */,
 				0B53F2F9134D6E5F00B61B41 /* notepad@2x.png in Resources */,
-				0BE2A8C613519D6000188E66 /* svhud-error.png in Resources */,
-				0BE2A8C713519D6000188E66 /* svhud-error@2x.png in Resources */,
-				0BE2A8C813519D6000188E66 /* svhud-success.png in Resources */,
-				0BE2A8C913519D6000188E66 /* svhud-success@2x.png in Resources */,
 				0B184CD51352556F00B111C9 /* Icon-Small.png in Resources */,
 				0B184CD61352556F00B111C9 /* Icon-Small@2x.png in Resources */,
 				0B184CD71352556F00B111C9 /* Icon.png in Resources */,
@@ -374,6 +361,7 @@
 				0B46C93313679AF1000E58EA /* ListSelectView.xib in Resources */,
 				0B9C27001378C49300EF56E4 /* EditableTableViewCell.xib in Resources */,
 				0BC40B9B1385D438004376F8 /* StudyDictionary.sqlite in Resources */,
+				0B045E36138C6F2100117949 /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,7 +405,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = StudyDictionary_Prefix.pch;
 				INFOPLIST_FILE = "StudyDictionary-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/External/GoogleAdMobAdsSDK\"",
@@ -439,7 +427,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = StudyDictionary_Prefix.pch;
 				INFOPLIST_FILE = "StudyDictionary-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/External/GoogleAdMobAdsSDK\"",
