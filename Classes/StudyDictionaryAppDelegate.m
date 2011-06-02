@@ -101,8 +101,14 @@
     /* Fetch API usage information (for testing purposes). */
     [wordnikClient_ requestAPIUsageStatusWithCompletionBlock: ^(WNClientAPIUsageStatus *status, NSError *error) {
         if (error != nil) {
-            NSLog(@"Usage request failed: %@", error);
-            return;
+            NSLog(@"%@ %@, %@", kErrorUnableToConnectToWordnik, error, [error userInfo]);
+            
+            NSString *message = [[NSString alloc] initWithString:kErrorWordnikErrorForUser];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            
+            [alert show];
+            [alert release];
+            [message release];
         }
         
         NSMutableString *output = [NSMutableString string];

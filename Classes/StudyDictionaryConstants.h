@@ -16,12 +16,19 @@
 
 #define kListEntityName @"List"
 
-// Error messgaes
+// Core Data Error messgaes
 #define kErrorUnableToSaveContext           @"Unable to save context"
 #define kErrorUnableToUpdateWordHistory     @"Unable to update word history"
 #define kErrorUnableToLoadHistory           @"Unable to load word history"
 #define kErrorUnableToDeleteWord            @"Unable to delete word from history"
 #define kErrorUnableToDeleteList            @"Unable to delete list from history"
-#define kErrorUnableToCreatePersistentStore @"Unable to create Persistent Store"
+#define kErrorUnableToCreatePersistentStore @"Unable to create a storange file"
 
 #define kErrorCoreDataMessageForUser        @"Unable to save word to history. Please restart the app using your Home button"
+
+// Wordnik Error Messages
+#define kErrorUnableToConnectToWordnik      @"Unable to create WNClient"
+#define kErrorUnableToCompleteWNRequest     @"Unable to complete WNRequest"
+#define kErrorUnableToCompleteWNWordRequest @"Unable to complete WNWordRequest"
+
+#define kErrorWordnikErrorForUser           @"Unable to connect to wordnik.com."

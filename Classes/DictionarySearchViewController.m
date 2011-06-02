@@ -54,6 +54,13 @@
     List *list = nil;
     if(listObjects == nil) {
 		NSLog(@"%@ %@, %@", kErrorUnableToUpdateWordHistory, error, [error userInfo]);
+        
+        NSString *message = [[NSString alloc] initWithString:kErrorCoreDataMessageForUser];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        
+        [alert show];
+        [alert release];
+        [message release];
 		
 	} else {
         if ([listObjects count] > 0) {
@@ -77,6 +84,13 @@
 	Word *word = nil;
 	if(wordObjects == nil) {
 		NSLog(@"%@ %@, %@", kErrorUnableToUpdateWordHistory, error, [error userInfo]);
+        
+        NSString *message = [[NSString alloc] initWithString:kErrorCoreDataMessageForUser];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        
+        [alert show];
+        [alert release];
+        [message release];
 		
 	} else {
         if ([wordObjects count] > 0) {
@@ -178,6 +192,7 @@
     requestTicket_ = nil;
     
     /* Report error */
+    NSLog(@"%@ %@, %@", kErrorUnableToCompleteWNRequest, error, [error userInfo]);
     UIAlertView *alert = [[[UIAlertView alloc] initWithTitle: @"Lookup Failure" 
                                                      message: [error localizedFailureReason]
                                                     delegate: nil 

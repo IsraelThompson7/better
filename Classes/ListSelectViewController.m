@@ -62,6 +62,13 @@
 	
 	if (objects == nil) {
 		NSLog(@"%@ %@, %@", kErrorUnableToLoadHistory, error, [error userInfo]);
+        
+        NSString *message = [[NSString alloc] initWithString:kErrorCoreDataMessageForUser];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        
+        [alert show];
+        [alert release];
+        [message release];
 		
 	} else {	
         NSMutableArray *listObjects = [[NSMutableArray alloc] init];

@@ -10,6 +10,7 @@
 #import <Wordnik/WNClient.h>
 
 #import "WordDefinitionViewController.h"
+#import "StudyDictionaryConstants.h"
 #import "ListSelectViewController.h"
 #import "StudyDictionaryAppDelegate.h"
 #import "StudyDictionaryAPIConstants.h"
@@ -65,6 +66,7 @@
     [SVProgressHUD showInView:self.view];
     [client wordWithRequest:req completionBlock:^(WNWordResponse *response, NSError *error) {      
         if (error != nil) {
+            NSLog(@"%@ %@, %@", kErrorUnableToCompleteWNWordRequest, error, [error userInfo]);
             [SVProgressHUD dismissWithError:[error localizedFailureReason]];
         }
         else {
