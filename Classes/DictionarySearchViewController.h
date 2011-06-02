@@ -13,12 +13,15 @@
 
 @interface DictionarySearchViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, WNClientObserver> {
 	UISearchBar *searchBar;
+    UIImageView *imageView;
+    
 	WNClient *client;
     WNRequestTicket *requestTicket_;
 	
 	NSArray *searchResults;
 }
 @property (nonatomic, retain) IBOutlet UISearchBar *searchBar;
+@property (nonatomic, retain) IBOutlet UIImageView *imageView;
 @property (nonatomic, retain) NSArray *searchResults;
 
 - (Word *)updateWordHistory:(NSString *)wordToLookup;

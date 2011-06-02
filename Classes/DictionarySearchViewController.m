@@ -16,7 +16,7 @@
 
 @implementation DictionarySearchViewController
 
-@synthesize searchBar, searchResults;
+@synthesize searchBar, imageView, searchResults;
 
 
 #pragma mark -
@@ -24,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.imageView.image = [UIImage imageNamed:@"lined-paper.png"];
     
     StudyDictionaryAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     client = [appDelegate wordnikClient];
@@ -230,12 +231,14 @@
 - (void)viewDidUnload {
     [super viewDidUnload];
 	self.searchBar = nil;
+    self.imageView = nil;
 	self.searchResults = nil;
 }
 
 
 - (void)dealloc {
 	[searchBar release];
+    [imageView release];
 	[searchResults release];
     [super dealloc];
 }

@@ -41,6 +41,10 @@
 		0B7A5F221355157D0086FD35 /* StudyDictionary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A5F201355157D0086FD35 /* StudyDictionary.xcdatamodeld */; };
 		0B9C26FD1378C47E00EF56E4 /* EditableTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C26FC1378C47E00EF56E4 /* EditableTableViewCell.m */; };
 		0B9C27001378C49300EF56E4 /* EditableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B9C26FF1378C49300EF56E4 /* EditableTableViewCell.xib */; };
+		0BC06F4C1397574D00412F7A /* lined-paper.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BC06F4A1397574D00412F7A /* lined-paper.png */; };
+		0BC06F4D1397574D00412F7A /* lined-paper@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BC06F4B1397574D00412F7A /* lined-paper@2x.png */; };
+		0BC06F5813975CB900412F7A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BC06F5613975CB900412F7A /* Default.png */; };
+		0BC06F5913975CB900412F7A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BC06F5713975CB900412F7A /* Default@2x.png */; };
 		0BE2A8B613518E5F00188E66 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BE2A8B513518E5F00188E66 /* SVProgressHUD.m */; };
 		0BE2A8C013518F5C00188E66 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BE2A8BF13518F5C00188E66 /* QuartzCore.framework */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
@@ -99,6 +103,10 @@
 		0B9C26FB1378C47E00EF56E4 /* EditableTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditableTableViewCell.h; sourceTree = "<group>"; };
 		0B9C26FC1378C47E00EF56E4 /* EditableTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditableTableViewCell.m; sourceTree = "<group>"; };
 		0B9C26FF1378C49300EF56E4 /* EditableTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EditableTableViewCell.xib; path = Classes/EditableTableViewCell.xib; sourceTree = "<group>"; };
+		0BC06F4A1397574D00412F7A /* lined-paper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lined-paper.png"; path = "Images/Misc/lined-paper.png"; sourceTree = "<group>"; };
+		0BC06F4B1397574D00412F7A /* lined-paper@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lined-paper@2x.png"; path = "Images/Misc/lined-paper@2x.png"; sourceTree = "<group>"; };
+		0BC06F5613975CB900412F7A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Images/Launch/Default.png; sourceTree = "<group>"; };
+		0BC06F5713975CB900412F7A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Images/Launch/Default@2x.png"; sourceTree = "<group>"; };
 		0BE2A8B413518E5F00188E66 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = External/SVProgressHUD/SVProgressHUD/SVProgressHUD.h; sourceTree = SOURCE_ROOT; };
 		0BE2A8B513518E5F00188E66 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = External/SVProgressHUD/SVProgressHUD/SVProgressHUD.m; sourceTree = SOURCE_ROOT; };
 		0BE2A8BF13518F5C00188E66 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -168,6 +176,15 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		0B134FAB139750AF002849A9 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				0BC06F5613975CB900412F7A /* Default.png */,
+				0BC06F5713975CB900412F7A /* Default@2x.png */,
+			);
+			name = Launch;
+			sourceTree = "<group>";
+		};
 		0B184CCE1352551900B111C9 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				0B184CCE1352551900B111C9 /* Icons */,
+				0B134FAB139750AF002849A9 /* Launch */,
+				0BC06F491397572900412F7A /* Misc */,
 				0BE2A8C113519D4000188E66 /* SVProgressHUD */,
 				0B53F2F1134D6E2400B61B41 /* TabBar */,
 			);
@@ -209,6 +228,15 @@
 				0BE2A8B313518E4D00188E66 /* SVProgressHUD */,
 			);
 			name = External;
+			sourceTree = "<group>";
+		};
+		0BC06F491397572900412F7A /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				0BC06F4A1397574D00412F7A /* lined-paper.png */,
+				0BC06F4B1397574D00412F7A /* lined-paper@2x.png */,
+			);
+			name = Misc;
 			sourceTree = "<group>";
 		};
 		0BE2A8B313518E4D00188E66 /* SVProgressHUD */ = {
@@ -362,6 +390,10 @@
 				0B9C27001378C49300EF56E4 /* EditableTableViewCell.xib in Resources */,
 				0B045E36138C6F2100117949 /* SVProgressHUD.bundle in Resources */,
 				0B134FAA13973354002849A9 /* StudyDictionary.sqlite in Resources */,
+				0BC06F4C1397574D00412F7A /* lined-paper.png in Resources */,
+				0BC06F4D1397574D00412F7A /* lined-paper@2x.png in Resources */,
+				0BC06F5813975CB900412F7A /* Default.png in Resources */,
+				0BC06F5913975CB900412F7A /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
