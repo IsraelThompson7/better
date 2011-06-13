@@ -23,4 +23,5 @@
 
 - (void)loadLists;
 - (void)insertListAnimated:(BOOL)animated;
+- (IBAction)dismissAction:(id)sender;
 @end

@@ -31,6 +31,12 @@
        
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    UIBarButtonItem *dismissButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                                     target:self 
+                                                                                     action:@selector(dismissAction:)];
+    self.navigationItem.leftBarButtonItem = dismissButton;
+    [dismissButton release];
+    
     [self loadLists];
     didViewJustLoad = YES;
 }
@@ -87,6 +93,11 @@
     [sortDescriptor release];
 	
 	[self.tableView reloadData];
+}
+
+
+- (IBAction)dismissAction:(id)sender {
+    [self.parentViewController dismissModalViewControllerAnimated:YES];
 }
 
 
@@ -229,8 +240,15 @@
     [super setEditing:editing animated:animated];
 
 	// Don't show the Back button while editing.
-	[self.navigationItem setHidesBackButton:editing animated:YES];
-    
+	if (editing) {
+        [self.navigationItem setLeftBarButtonItem:nil animated:YES];
+    } else {
+        UIBarButtonItem *dismissButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                                       target:self 
+                                                                                       action:@selector(dismissAction:)];
+        [self.navigationItem setLeftBarButtonItem:dismissButton animated:YES];
+        [dismissButton release];
+    }      
 	
 	[self.tableView beginUpdates];
 	
@@ -364,7 +382,6 @@
     }
     
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [Debug printCoreDataObjects];
 }
 
 
@@ -381,7 +398,7 @@
             finalListText = @"Unnamed Word List";
         }
         
-        NSString *tempListText = [[NSString alloc] initWithString:finalListText];
+        NSString *tempListText = [[[NSString alloc] initWithString:finalListText] autorelease];
         int i = 1;
         BOOL hasSameName;
         do {
@@ -396,6 +413,9 @@
             }
         } while (hasSameName);
         
+        if (list.listName) {
+            [list.listName release];
+        }
         list.listName = finalListText;
         textField.text = finalListText;
     } 

@@ -126,8 +126,14 @@
                                                        bundle:nil];
 
     listSelViewController.word = wordToLookup;
-    [self.navigationController pushViewController:listSelViewController animated:YES];
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:listSelViewController];
+    navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    
+    [self.navigationController presentModalViewController:navigationController animated:YES];
+
     [listSelViewController release];
+    [navigationController release];
 }
 
 

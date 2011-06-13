@@ -358,7 +358,7 @@
             finalListText = @"Unnamed Word List";
         }
         
-        NSString *tempListText = [[NSString alloc] initWithString:finalListText];
+        NSString *tempListText = [[[NSString alloc] initWithString:finalListText] autorelease];
         int i = 1;
         BOOL hasSameName;
         do {
@@ -373,6 +373,9 @@
             }
         } while (hasSameName);
         
+        if (list.listName) {
+            [list.listName release];
+        }
         list.listName = finalListText;
         textField.text = finalListText;
     } 
