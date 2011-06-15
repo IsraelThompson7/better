@@ -33,9 +33,9 @@
 	} else {	
         NSLog(@"Lists and their words");
         for (List *listObject in objects) {            
-            NSLog([NSString stringWithFormat:@"-%@", listObject.listName]);
+            NSLog(@"-%@", listObject.listName);
             for (Word *wordObject in listObject.listContents) {
-                NSLog([NSString stringWithFormat:@"--%@", wordObject.word]);
+                NSLog(@"--%@", wordObject.word);
             }
         }
     }
@@ -54,9 +54,9 @@
 	} else {	
         NSLog(@"Words and their Lists");
         for (Word *wordObject in objects) {      
-            NSLog([NSString stringWithFormat:@"-%@", wordObject.word]);
+            NSLog(@"-%@", wordObject.word);
             for (List *listObject in wordObject.belongsToList) {
-                NSLog([NSString stringWithFormat:@"--%@", listObject.listName]);
+                NSLog(@"--%@", listObject.listName);
             }
         }
     }
