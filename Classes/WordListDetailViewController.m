@@ -48,6 +48,14 @@
         [listObjects addObject:word];
     }
     
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"word" ascending:YES];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    
+    [listObjects sortUsingDescriptors:sortDescriptors];
+    
+    [sortDescriptor release];
+    [sortDescriptors release];
+    
     if (listContents != nil) [listContents release];
     listContents = [[NSMutableArray alloc] initWithArray:listObjects];
     
