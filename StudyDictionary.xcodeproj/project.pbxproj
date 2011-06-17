@@ -473,7 +473,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: James Weinert (VU4X4H4J4C)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: James Weinert (VU4X4H4J4C)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -481,8 +481,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				OTHER_CFLAGS = "";
 				PREBINDING = NO;
-				PROVISIONING_PROFILE = "A82E6922-5D54-4577-A4EB-1A68B68C31D4";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A82E6922-5D54-4577-A4EB-1A68B68C31D4";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2C42A1C1-D489-42A8-8CC2-E20E4958F0FF";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -491,16 +491,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: James Weinert (VU4X4H4J4C)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: James Weinert (VU4X4H4J4C)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: James Weinert";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
-				PROVISIONING_PROFILE = "A82E6922-5D54-4577-A4EB-1A68B68C31D4";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A82E6922-5D54-4577-A4EB-1A68B68C31D4";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "36AB78F2-3FD2-4B41-AF31-70EAAFBD0240";
 				SDKROOT = iphoneos;
 			};
 			name = Release;

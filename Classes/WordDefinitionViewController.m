@@ -165,13 +165,13 @@
 
 
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner {
-    NSLog(@"bannerViewDidLoadAd");
+//    NSLog(@"bannerViewDidLoadAd");
     [self updateiADBannerViewPosition:YES];
 }
 
 
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
-    NSLog(@"bannerView didFailToReceiveAd");
+//    NSLog(@"bannerView didFailToReceiveAd");
     [self updateiADBannerViewPosition:YES];
 }
 
