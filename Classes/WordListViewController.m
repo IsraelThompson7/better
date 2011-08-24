@@ -373,9 +373,6 @@
             }
         } while (hasSameName);
         
-        if (list.listName) {
-            [list.listName release];
-        }
         list.listName = finalListText;
         textField.text = finalListText;
     } 
