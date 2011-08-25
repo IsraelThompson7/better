@@ -2,6 +2,7 @@ Images/*
 External/GoogleAdMobAdsSDK/*
 
 #Xcode
+.DS_Store
 build/*
 *.pbxuser
 !default.pbxuser
