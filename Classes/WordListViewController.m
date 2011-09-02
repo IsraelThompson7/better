@@ -86,7 +86,7 @@
 	[request release];
     [sortDescriptor release];
 	
-	[table reloadData];
+	[self.table reloadData];
 }
 
 

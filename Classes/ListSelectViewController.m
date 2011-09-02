@@ -163,7 +163,7 @@
 
 
 #pragma mark -
-#pragma mark Editing Talble Rows
+#pragma mark Editing Table Rows
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     NSUInteger row = [indexPath row];

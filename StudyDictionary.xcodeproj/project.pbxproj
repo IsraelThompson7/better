@@ -25,7 +25,7 @@
 		0B184CD81352556F00B111C9 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B184CD31352556F00B111C9 /* Icon@2x.png */; };
 		0B184CD91352556F00B111C9 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 0B184CD41352556F00B111C9 /* iTunesArtwork */; };
 		0B184CF81352926300B111C9 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B184CF71352926300B111C9 /* iAd.framework */; };
-		0B3057491347C187003C0997 /* WordnikUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B3057481347C187003C0997 /* WordnikUI.framework */; };
+		0B1EBBE41405F0DF00E267D8 /* Wordnik.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B1EBBE31405F0DF00E267D8 /* Wordnik.framework */; };
 		0B4174251363837200336DF5 /* WordListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B4174231363837200336DF5 /* WordListViewController.m */; };
 		0B4174261363837200336DF5 /* WordListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B4174241363837200336DF5 /* WordListView.xib */; };
 		0B46C93213679AF1000E58EA /* ListSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B46C93013679AF1000E58EA /* ListSelectViewController.m */; };
@@ -82,7 +82,7 @@
 		0B184CD31352556F00B111C9 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Images/Icons/Icon@2x.png"; sourceTree = "<group>"; };
 		0B184CD41352556F00B111C9 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = text; name = iTunesArtwork; path = Images/Icons/iTunesArtwork; sourceTree = "<group>"; };
 		0B184CF71352926300B111C9 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
-		0B3057481347C187003C0997 /* WordnikUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WordnikUI.framework; path = "External/wordkit/frameworks/objective-c/Wordnik WordKit 1.0/iOS Framework/WordnikUI.framework"; sourceTree = "<group>"; };
+		0B1EBBE31405F0DF00E267D8 /* Wordnik.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Wordnik.framework; path = "External/wordkit/frameworks/objective-c/Wordnik WordKit 1.0/iOS Framework/Wordnik.framework"; sourceTree = "<group>"; };
 		0B4174221363837200336DF5 /* WordListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordListViewController.h; sourceTree = "<group>"; };
 		0B4174231363837200336DF5 /* WordListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordListViewController.m; sourceTree = "<group>"; };
 		0B4174241363837200336DF5 /* WordListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WordListView.xib; path = Classes/WordListView.xib; sourceTree = "<group>"; };
@@ -129,17 +129,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B184CF81352926300B111C9 /* iAd.framework in Frameworks */,
-				0BE2A8C013518F5C00188E66 /* QuartzCore.framework in Frameworks */,
-				0B003A391347C60700606EF3 /* CoreFoundation.framework in Frameworks */,
 				0B0039D31347C50800606EF3 /* CoreData.framework in Frameworks */,
-				0B3057491347C187003C0997 /* WordnikUI.framework in Frameworks */,
-				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
-				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				0B003A391347C60700606EF3 /* CoreFoundation.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
 				EA4C9A53132F5BE700B76158 /* CoreText.framework in Frameworks */,
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				0B184CF81352926300B111C9 /* iAd.framework in Frameworks */,
 				EA4C9A55132F5BE700B76158 /* libsqlite3.dylib in Frameworks */,
+				0BE2A8C013518F5C00188E66 /* QuartzCore.framework in Frameworks */,
 				EA4C9A5B132F5C0E00B76158 /* SystemConfiguration.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				0B1EBBE41405F0DF00E267D8 /* Wordnik.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,7 +316,7 @@
 				0BE2A8BF13518F5C00188E66 /* QuartzCore.framework */,
 				EA4C9A5A132F5C0E00B76158 /* SystemConfiguration.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
-				0B3057481347C187003C0997 /* WordnikUI.framework */,
+				0B1EBBE31405F0DF00E267D8 /* Wordnik.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -469,6 +469,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/External/GoogleAdMobAdsSDK\"",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = StudyDictionary;
 				VALIDATE_PRODUCT = YES;
 			};
