@@ -7,8 +7,10 @@ Compiling
 ---------
 
 After downloading The Study Dictionary from github, download the submodules with the following commands.
+<pre>
 git submodule init
 git submodule update
+</pre>
 
 Open StudyDictionary.xcodeproj in Xcode 4.
 
