@@ -7,21 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ListViewController.h"
 
-@class Word, EditableTableViewCell;
+@class Word;
 
-@interface ListSelectViewController : UITableViewController <UITextFieldDelegate> {
-    EditableTableViewCell *editableTableViewCell;
-    
-	NSMutableArray *lists;
+@interface ListSelectViewController : ListViewController {
     Word *word;
-    BOOL didViewJustLoad;
 }
-@property (nonatomic, assign) IBOutlet EditableTableViewCell *editableTableViewCell;
-@property (nonatomic, retain) NSMutableArray *lists;
 @property (nonatomic, retain) Word *word;
 
-- (void)loadLists;
-- (void)insertListAnimated:(BOOL)animated;
 - (IBAction)dismissAction:(id)sender;
 @end

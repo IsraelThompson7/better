@@ -21,7 +21,6 @@
 @implementation WordDefinitionViewController
 
 @synthesize wordDefinitionView, wordToLookup;
-@synthesize adBannerView;
 
 
 #pragma mark -
@@ -37,8 +36,6 @@
 
     self.navigationItem.rightBarButtonItem = addToListButton;
     [addToListButton release];
-    
-    adBannerView.delegate = self;
 }
 
 
@@ -138,45 +135,6 @@
 
 
 #pragma mark -
-#pragma mark ADBannerViewDelegate methods
-
-- (void)updateiADBannerViewPosition:(BOOL)animated {
-    CGFloat animationDuration = animated ? 0.2f : 0.0f;
-    
-    CGFloat bannerHeight = self.adBannerView.bounds.size.height;
-    
-    CGRect newBannerFrame = self.adBannerView.frame;
-    CGRect newWordDefFrame = self.view.frame;
-    
-    if(self.adBannerView.bannerLoaded) {
-        newWordDefFrame.size.height -= bannerHeight;
-        newWordDefFrame.origin.y += bannerHeight;
-        newBannerFrame.origin.y = self.view.frame.origin.y;
-    } else {
-        newBannerFrame.origin.y = self.view.frame.origin.y - bannerHeight;
-    }
-    
-    [UIView animateWithDuration:animationDuration
-                     animations:^{
-                         self.wordDefinitionView.frame = newWordDefFrame;
-                         self.adBannerView.frame = newBannerFrame;
-                     }];
-}
-
-
-- (void)bannerViewDidLoadAd:(ADBannerView *)banner {
-//    NSLog(@"bannerViewDidLoadAd");
-    [self updateiADBannerViewPosition:YES];
-}
-
-
-- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
-//    NSLog(@"bannerView didFailToReceiveAd");
-    [self updateiADBannerViewPosition:YES];
-}
-
-
-#pragma mark -
 #pragma mark Memory management
 
 - (void)didReceiveMemoryWarning {
@@ -186,8 +144,6 @@
 
 - (void)viewDidUnload {
     [super viewDidUnload];
-    adBannerView.delegate = nil;
-    self.adBannerView = nil;
     self.wordDefinitionView = nil;
 	self.wordToLookup = nil;
 }
@@ -195,8 +151,6 @@
 
 - (void)dealloc {
     [super dealloc];
-    adBannerView.delegate = nil;
-    [adBannerView release];
 	[wordDefinitionView release];
 	[wordToLookup release];
 }
