@@ -42,13 +42,13 @@
 
 
 - (void)viewDidDisappear:(BOOL)animated {
-    [self saveSearchState];
+    [self saveSearchBarState];
     [super viewDidDisappear:animated];
 }
 
 
 - (void)applicationWillResignActive:(NSNotification *)notification {
-    [self saveSearchState];
+    [self saveSearchBarState];
 }
 
 
@@ -83,7 +83,7 @@
 }
 
 
-- (void)saveSearchState {
+- (void)saveSearchBarState {
     StudyDictionaryAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
 	NSManagedObjectContext *context = [appDelegate managedObjectContext];
 	NSError *error;

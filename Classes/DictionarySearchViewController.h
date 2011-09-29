@@ -23,7 +23,7 @@
 @property (nonatomic, retain) NSArray *searchResults;
 
 - (void)loadSearchBarState;
-- (void)saveSearchState;
+- (void)saveSearchBarState;
 - (Word *)updateWordHistory:(NSString *)wordToLookup;
 - (void)finishSearchWithString:(NSString *)searchString;
 
