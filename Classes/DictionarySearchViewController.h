@@ -12,7 +12,6 @@
 @class Word;
 
 @interface DictionarySearchViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, WNClientObserver> {
-	UISearchBar *searchBar;
     UIImageView *imageView;
     
 	WNClient *client;
@@ -20,10 +19,12 @@
 	
 	NSArray *searchResults;
 }
-@property (nonatomic, retain) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, retain) IBOutlet UIImageView *imageView;
 @property (nonatomic, retain) NSArray *searchResults;
 
+- (void)loadSearchBarState;
+- (void)saveSearchState;
 - (Word *)updateWordHistory:(NSString *)wordToLookup;
+- (void)finishSearchWithString:(NSString *)searchString;
 
 @end

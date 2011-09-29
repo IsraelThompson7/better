@@ -18,6 +18,7 @@
 		0B003A391347C60700606EF3 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B003A381347C60700606EF3 /* CoreFoundation.framework */; };
 		0B045E36138C6F2100117949 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0B045E35138C6F2100117949 /* SVProgressHUD.bundle */; };
 		0B055DDC13691AF900104D7B /* Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B055DDB13691AF900104D7B /* Debug.m */; };
+		0B11342E143434150018888E /* SearchBarContents.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B11342D143434150018888E /* SearchBarContents.m */; };
 		0B134FAA13973354002849A9 /* StudyDictionary.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0B134FA913973354002849A9 /* StudyDictionary.sqlite */; };
 		0B184CF81352926300B111C9 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B184CF71352926300B111C9 /* iAd.framework */; };
 		0B1EBBE41405F0DF00E267D8 /* Wordnik.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B1EBBE31405F0DF00E267D8 /* Wordnik.framework */; };
@@ -61,6 +62,9 @@
 		0B045E35138C6F2100117949 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = External/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
 		0B055DDA13691AF900104D7B /* Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Debug.h; sourceTree = "<group>"; };
 		0B055DDB13691AF900104D7B /* Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Debug.m; sourceTree = "<group>"; };
+		0B11342B1433FB690018888E /* StudyDictionary-1.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "StudyDictionary-1.1.xcdatamodel"; sourceTree = "<group>"; };
+		0B11342C143434150018888E /* SearchBarContents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchBarContents.h; sourceTree = "<group>"; };
+		0B11342D143434150018888E /* SearchBarContents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchBarContents.m; sourceTree = "<group>"; };
 		0B134FA913973354002849A9 /* StudyDictionary.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = StudyDictionary.sqlite; sourceTree = "<group>"; };
 		0B184CF71352926300B111C9 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		0B1EBBE31405F0DF00E267D8 /* Wordnik.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Wordnik.framework; path = "External/wordkit/frameworks/objective-c/Wordnik WordKit 1.0/iOS Framework/Wordnik.framework"; sourceTree = "<group>"; };
@@ -141,6 +145,8 @@
 				0B0039C81347C28400606EF3 /* WordListDetailViewController.m */,
 				0B9C26FB1378C47E00EF56E4 /* EditableTableViewCell.h */,
 				0B9C26FC1378C47E00EF56E4 /* EditableTableViewCell.m */,
+				0B11342C143434150018888E /* SearchBarContents.h */,
+				0B11342D143434150018888E /* SearchBarContents.m */,
 				0B77D2A0135E7A00004576AD /* List.h */,
 				0B77D2A1135E7A00004576AD /* List.m */,
 				0B77D29D135E79FF004576AD /* Word.h */,
@@ -366,6 +372,7 @@
 				0B055DDC13691AF900104D7B /* Debug.m in Sources */,
 				0B9C26FD1378C47E00EF56E4 /* EditableTableViewCell.m in Sources */,
 				0B27751A142C1F6F002D05A7 /* ListViewController.m in Sources */,
+				0B11342E143434150018888E /* SearchBarContents.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,9 +489,10 @@
 		0B7A5F201355157D0086FD35 /* StudyDictionary.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				0B11342B1433FB690018888E /* StudyDictionary-1.1.xcdatamodel */,
 				0B7A5F211355157D0086FD35 /* StudyDictionary.xcdatamodel */,
 			);
-			currentVersion = 0B7A5F211355157D0086FD35 /* StudyDictionary.xcdatamodel */;
+			currentVersion = 0B11342B1433FB690018888E /* StudyDictionary-1.1.xcdatamodel */;
 			path = StudyDictionary.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -10,13 +10,14 @@
 #import "StudyDictionaryAppDelegate.h"
 #import "WordDefinitionViewController.h"
 #import "StudyDictionaryConstants.h"
+#import "SearchBarContents.h"
 #import "List.h"
 #import "Word.h"
 
 
 @implementation DictionarySearchViewController
 
-@synthesize searchBar, imageView, searchResults;
+@synthesize imageView, searchResults;
 
 
 #pragma mark -
@@ -29,6 +30,87 @@
     StudyDictionaryAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     client = [appDelegate wordnikClient];
     [client addObserver: self];
+
+    [self loadSearchBarState];
+    
+    UIApplication *app = [UIApplication sharedApplication];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(applicationWillResignActive:)
+												 name:UIApplicationWillResignActiveNotification
+											   object:app];
+}
+
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [self saveSearchState];
+    [super viewDidDisappear:animated];
+}
+
+
+- (void)applicationWillResignActive:(NSNotification *)notification {
+    [self saveSearchState];
+}
+
+
+- (void)loadSearchBarState {
+    StudyDictionaryAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+	NSManagedObjectContext *context = [appDelegate managedObjectContext];
+	NSError *error;
+    
+	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    
+	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:kSearchBarEntityName inManagedObjectContext:context];
+	[request setEntity:entityDescription];
+    
+    NSArray *objects = [context executeFetchRequest:request error:&error];
+    
+    if (objects == nil) {
+        NSLog(@"%@ %@, %@", kErrorUnableToSaveSearchBarContents, error, [error userInfo]);
+    } else {
+        SearchBarContents *searchBar = nil;
+        if ([objects count] > 0) {
+            searchBar = [objects objectAtIndex:0];
+            
+            if (searchBar.savedSearchString && ![searchBar.savedSearchString isEqualToString:@""]) {
+                [self.searchDisplayController setActive:[searchBar.searchWasActive boolValue]];
+                [self.searchDisplayController.searchBar setText:searchBar.savedSearchString];
+                
+                [self finishSearchWithString:searchBar.savedSearchString];
+            }
+        }
+    }
+    [request release];
+}
+
+
+- (void)saveSearchState {
+    StudyDictionaryAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+	NSManagedObjectContext *context = [appDelegate managedObjectContext];
+	NSError *error;
+    
+	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    
+	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:kSearchBarEntityName inManagedObjectContext:context];
+	[request setEntity:entityDescription];
+    
+    NSArray *objects = [context executeFetchRequest:request error:&error];
+    
+    if (objects == nil) {
+        NSLog(@"%@ %@, %@", kErrorUnableToSaveSearchBarContents, error, [error userInfo]);
+    } else {
+        SearchBarContents *searchBar = nil;
+        if ([objects count] > 0) {
+            searchBar = [objects objectAtIndex:0];
+        } else {
+            searchBar = [NSEntityDescription insertNewObjectForEntityForName:kSearchBarEntityName inManagedObjectContext:context];
+        }
+                
+        searchBar.savedSearchString = self.searchDisplayController.searchBar.text;
+        searchBar.searchWasActive = [NSNumber numberWithBool:[self.searchDisplayController isActive]];
+        
+        [context save:&error];
+    }
+    [request release];
 }
 
 
@@ -40,7 +122,6 @@
 	NSManagedObjectContext *context = [appDelegate managedObjectContext];
 	NSError *error;
     
-	
 	NSFetchRequest *request = [[NSFetchRequest alloc] init];
     	
 	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:kListEntityName inManagedObjectContext:context];
@@ -156,19 +237,24 @@
 #pragma mark Search bar delegate methods
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {    
+    [self finishSearchWithString:searchText];
+}
+
+
+- (void)finishSearchWithString:(NSString *)searchString {
     /* Cancel any running request */
     [requestTicket_ cancel];
     [requestTicket_ release];
     requestTicket_ = nil;
     
     /* If word was deleted, simply reset the current result text. */
-    if ([searchText length] == 0) {
-//        resultTextView.text = nil;
+    if ([searchString length] == 0) {
+        //        resultTextView.text = nil;
         return;
     }
     
     /* Submit an autocompletion request */
-	WNWordSearchRequest * req = [WNWordSearchRequest requestWithWordFragment:searchText
+	WNWordSearchRequest * req = [WNWordSearchRequest requestWithWordFragment:searchString
 																		skip:0 
 																	   limit:10 
 														 includePartOfSpeech:nil
@@ -230,14 +316,12 @@
 
 - (void)viewDidUnload {
     [super viewDidUnload];
-	self.searchBar = nil;
     self.imageView = nil;
 	self.searchResults = nil;
 }
 
 
 - (void)dealloc {
-	[searchBar release];
     [imageView release];
 	[searchResults release];
     [super dealloc];

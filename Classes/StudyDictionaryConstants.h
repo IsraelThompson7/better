@@ -16,6 +16,10 @@
 
 #define kListEntityName @"List"
 
+#define kSearchBarEntityName    @"SearchBarContents"
+#define kSearchBarStringKey     @"savedSearchString"
+#define kSearchBarWasActiveKey  @"searchWasActive"
+
 // Core Data Error messgaes
 #define kErrorUnableToSaveContext           @"Unable to save context"
 #define kErrorUnableToUpdateWordHistory     @"Unable to update word history"
@@ -23,6 +27,7 @@
 #define kErrorUnableToDeleteWord            @"Unable to delete word from history"
 #define kErrorUnableToDeleteList            @"Unable to delete list from history"
 #define kErrorUnableToCreatePersistentStore @"Unable to create a storange file"
+#define kErrorUnableToSaveSearchBarContents @"Unable to save Search Bar contents"
 
 #define kErrorCoreDataMessageForUser        @"Unable to save word to history. Please restart the app using your Home button"
 
