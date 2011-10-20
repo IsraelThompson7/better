@@ -41,12 +41,6 @@
 }
 
 
-- (void)viewDidDisappear:(BOOL)animated {
-    [self saveSearchBarState];
-    [super viewDidDisappear:animated];
-}
-
-
 - (void)applicationWillResignActive:(NSNotification *)notification {
     [self saveSearchBarState];
 }
@@ -316,6 +310,7 @@
 
 - (void)viewDidUnload {
     [super viewDidUnload];
+    [self saveSearchBarState];
     self.imageView = nil;
 	self.searchResults = nil;
 }
