@@ -21,8 +21,8 @@
 		0B11342E143434150018888E /* SearchBarContents.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B11342D143434150018888E /* SearchBarContents.m */; };
 		0B134FAA13973354002849A9 /* StudyDictionary.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0B134FA913973354002849A9 /* StudyDictionary.sqlite */; };
 		0B184CF81352926300B111C9 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B184CF71352926300B111C9 /* iAd.framework */; };
-		0B1EBBE41405F0DF00E267D8 /* Wordnik.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B1EBBE31405F0DF00E267D8 /* Wordnik.framework */; };
 		0B27751A142C1F6F002D05A7 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B277519142C1F6F002D05A7 /* ListViewController.m */; };
+		0B2D811A14522C2B00D3324B /* Wordnik.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B2D811914522C2B00D3324B /* Wordnik.framework */; };
 		0B3520761451E98400A9F48D /* wordnik-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B3520741451E98400A9F48D /* wordnik-logo.png */; };
 		0B3520771451E98400A9F48D /* wordnik-logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B3520751451E98400A9F48D /* wordnik-logo@2x.png */; };
 		0B4174251363837200336DF5 /* WordListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B4174231363837200336DF5 /* WordListViewController.m */; };
@@ -71,9 +71,9 @@
 		0B11342D143434150018888E /* SearchBarContents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchBarContents.m; sourceTree = "<group>"; };
 		0B134FA913973354002849A9 /* StudyDictionary.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = StudyDictionary.sqlite; sourceTree = "<group>"; };
 		0B184CF71352926300B111C9 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
-		0B1EBBE31405F0DF00E267D8 /* Wordnik.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Wordnik.framework; path = "External/wordkit/frameworks/objective-c/Wordnik WordKit 1.0/iOS Framework/Wordnik.framework"; sourceTree = "<group>"; };
 		0B277518142C1F6F002D05A7 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		0B277519142C1F6F002D05A7 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		0B2D811914522C2B00D3324B /* Wordnik.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Wordnik.framework; path = "External/wordkit/frameworks/objective-c/Wordnik WordKit 1.02/iOS Framework/Wordnik.framework"; sourceTree = "<group>"; };
 		0B3520741451E98400A9F48D /* wordnik-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "wordnik-logo.png"; path = "Images/Wordnik/wordnik-logo.png"; sourceTree = "<group>"; };
 		0B3520751451E98400A9F48D /* wordnik-logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "wordnik-logo@2x.png"; path = "Images/Wordnik/wordnik-logo@2x.png"; sourceTree = "<group>"; };
 		0B4174221363837200336DF5 /* WordListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordListViewController.h; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 				0BE2A8C013518F5C00188E66 /* QuartzCore.framework in Frameworks */,
 				EA4C9A5B132F5C0E00B76158 /* SystemConfiguration.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
-				0B1EBBE41405F0DF00E267D8 /* Wordnik.framework in Frameworks */,
+				0B2D811A14522C2B00D3324B /* Wordnik.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,7 +304,7 @@
 				0BE2A8BF13518F5C00188E66 /* QuartzCore.framework */,
 				EA4C9A5A132F5C0E00B76158 /* SystemConfiguration.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
-				0B1EBBE31405F0DF00E267D8 /* Wordnik.framework */,
+				0B2D811914522C2B00D3324B /* Wordnik.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -414,6 +414,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/External/wordkit/frameworks/objective-c/Wordnik WordKit 1.0/iOS Framework\"",
+					"\"$(SRCROOT)/External/wordkit/frameworks/objective-c/Wordnik WordKit 1.02/iOS Framework\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -441,6 +442,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/External/wordkit/frameworks/objective-c/Wordnik WordKit 1.0/iOS Framework\"",
+					"\"$(SRCROOT)/External/wordkit/frameworks/objective-c/Wordnik WordKit 1.02/iOS Framework\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = StudyDictionary_Prefix.pch;
