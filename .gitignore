@@ -1,4 +1,10 @@
-Images/*
+#Images
+Images/Icons/*
+Images/Launch/*
+Images/Misc/*
+Images/TabBar/*
+
+#Non-git libraries
 External/GoogleAdMobAdsSDK/*
 
 #Xcode

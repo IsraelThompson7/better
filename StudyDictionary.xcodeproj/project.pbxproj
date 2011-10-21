@@ -23,6 +23,8 @@
 		0B184CF81352926300B111C9 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B184CF71352926300B111C9 /* iAd.framework */; };
 		0B1EBBE41405F0DF00E267D8 /* Wordnik.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B1EBBE31405F0DF00E267D8 /* Wordnik.framework */; };
 		0B27751A142C1F6F002D05A7 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B277519142C1F6F002D05A7 /* ListViewController.m */; };
+		0B3520761451E98400A9F48D /* wordnik-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B3520741451E98400A9F48D /* wordnik-logo.png */; };
+		0B3520771451E98400A9F48D /* wordnik-logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B3520751451E98400A9F48D /* wordnik-logo@2x.png */; };
 		0B4174251363837200336DF5 /* WordListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B4174231363837200336DF5 /* WordListViewController.m */; };
 		0B4174261363837200336DF5 /* WordListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B4174241363837200336DF5 /* WordListView.xib */; };
 		0B46C93213679AF1000E58EA /* ListSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B46C93013679AF1000E58EA /* ListSelectViewController.m */; };
@@ -30,6 +32,8 @@
 		0B77D29F135E79FF004576AD /* Word.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B77D29E135E79FF004576AD /* Word.m */; };
 		0B77D2A2135E7A00004576AD /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B77D2A1135E7A00004576AD /* List.m */; };
 		0B7A5F221355157D0086FD35 /* StudyDictionary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0B7A5F201355157D0086FD35 /* StudyDictionary.xcdatamodeld */; };
+		0B7CF152144FD79D00BEE4FD /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7CF150144FD79D00BEE4FD /* AboutViewController.m */; };
+		0B7CF153144FD79D00BEE4FD /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B7CF151144FD79D00BEE4FD /* AboutViewController.xib */; };
 		0B9C26FD1378C47E00EF56E4 /* EditableTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C26FC1378C47E00EF56E4 /* EditableTableViewCell.m */; };
 		0B9C27001378C49300EF56E4 /* EditableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B9C26FF1378C49300EF56E4 /* EditableTableViewCell.xib */; };
 		0BE2A8B613518E5F00188E66 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BE2A8B513518E5F00188E66 /* SVProgressHUD.m */; };
@@ -70,6 +74,8 @@
 		0B1EBBE31405F0DF00E267D8 /* Wordnik.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Wordnik.framework; path = "External/wordkit/frameworks/objective-c/Wordnik WordKit 1.0/iOS Framework/Wordnik.framework"; sourceTree = "<group>"; };
 		0B277518142C1F6F002D05A7 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		0B277519142C1F6F002D05A7 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		0B3520741451E98400A9F48D /* wordnik-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "wordnik-logo.png"; path = "Images/Wordnik/wordnik-logo.png"; sourceTree = "<group>"; };
+		0B3520751451E98400A9F48D /* wordnik-logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "wordnik-logo@2x.png"; path = "Images/Wordnik/wordnik-logo@2x.png"; sourceTree = "<group>"; };
 		0B4174221363837200336DF5 /* WordListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordListViewController.h; sourceTree = "<group>"; };
 		0B4174231363837200336DF5 /* WordListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordListViewController.m; sourceTree = "<group>"; };
 		0B4174241363837200336DF5 /* WordListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WordListView.xib; path = Classes/WordListView.xib; sourceTree = "<group>"; };
@@ -81,6 +87,9 @@
 		0B77D2A0135E7A00004576AD /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
 		0B77D2A1135E7A00004576AD /* List.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = List.m; sourceTree = "<group>"; };
 		0B7A5F211355157D0086FD35 /* StudyDictionary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudyDictionary.xcdatamodel; sourceTree = "<group>"; };
+		0B7CF14F144FD79D00BEE4FD /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		0B7CF150144FD79D00BEE4FD /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		0B7CF151144FD79D00BEE4FD /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutViewController.xib; path = Classes/AboutViewController.xib; sourceTree = "<group>"; };
 		0B9C26FB1378C47E00EF56E4 /* EditableTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditableTableViewCell.h; sourceTree = "<group>"; };
 		0B9C26FC1378C47E00EF56E4 /* EditableTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditableTableViewCell.m; sourceTree = "<group>"; };
 		0B9C26FF1378C49300EF56E4 /* EditableTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EditableTableViewCell.xib; path = Classes/EditableTableViewCell.xib; sourceTree = "<group>"; };
@@ -143,6 +152,8 @@
 				0B4174231363837200336DF5 /* WordListViewController.m */,
 				0B0039C71347C28400606EF3 /* WordListDetailViewController.h */,
 				0B0039C81347C28400606EF3 /* WordListDetailViewController.m */,
+				0B7CF14F144FD79D00BEE4FD /* AboutViewController.h */,
+				0B7CF150144FD79D00BEE4FD /* AboutViewController.m */,
 				0B9C26FB1378C47E00EF56E4 /* EditableTableViewCell.h */,
 				0B9C26FC1378C47E00EF56E4 /* EditableTableViewCell.m */,
 				0B11342C143434150018888E /* SearchBarContents.h */,
@@ -179,6 +190,7 @@
 				0BC06F491397572900412F7A /* Misc */,
 				0BE2A8C113519D4000188E66 /* SVProgressHUD */,
 				0B53F2F1134D6E2400B61B41 /* TabBar */,
+				0B7CF155144FD9DE00BEE4FD /* Wordnik */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -188,6 +200,15 @@
 			children = (
 			);
 			name = TabBar;
+			sourceTree = "<group>";
+		};
+		0B7CF155144FD9DE00BEE4FD /* Wordnik */ = {
+			isa = PBXGroup;
+			children = (
+				0B3520741451E98400A9F48D /* wordnik-logo.png */,
+				0B3520751451E98400A9F48D /* wordnik-logo@2x.png */,
+			);
+			name = Wordnik;
 			sourceTree = "<group>";
 		};
 		0BA5E76E134FB92200C55664 /* External */ = {
@@ -255,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				0B53F2EF134D6E1600B61B41 /* Images */,
+				0B7CF151144FD79D00BEE4FD /* AboutViewController.xib */,
 				0B0039C31347C28400606EF3 /* DictionarySearchView.xib */,
 				0B9C26FF1378C49300EF56E4 /* EditableTableViewCell.xib */,
 				0B0039C61347C28400606EF3 /* WordDefinitionView.xib */,
@@ -313,7 +335,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0410;
+				LastUpgradeCheck = 0420;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "StudyDictionary" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -348,6 +370,9 @@
 				0B9C27001378C49300EF56E4 /* EditableTableViewCell.xib in Resources */,
 				0B045E36138C6F2100117949 /* SVProgressHUD.bundle in Resources */,
 				0B134FAA13973354002849A9 /* StudyDictionary.sqlite in Resources */,
+				0B7CF153144FD79D00BEE4FD /* AboutViewController.xib in Resources */,
+				0B3520761451E98400A9F48D /* wordnik-logo.png in Resources */,
+				0B3520771451E98400A9F48D /* wordnik-logo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +398,7 @@
 				0B9C26FD1378C47E00EF56E4 /* EditableTableViewCell.m in Sources */,
 				0B27751A142C1F6F002D05A7 /* ListViewController.m in Sources */,
 				0B11342E143434150018888E /* SearchBarContents.m in Sources */,
+				0B7CF152144FD79D00BEE4FD /* AboutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +409,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -392,7 +419,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = StudyDictionary_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "StudyDictionary-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				LIBRARY_SEARCH_PATHS = (
@@ -401,6 +428,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = StudyDictionary;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -408,6 +436,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -415,7 +444,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = StudyDictionary_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "StudyDictionary-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				LIBRARY_SEARCH_PATHS = (
@@ -424,6 +453,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = StudyDictionary;
+				PROVISIONING_PROFILE = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -432,15 +462,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: James Weinert (VU4X4H4J4C)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "";
 				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2C42A1C1-D489-42A8-8CC2-E20E4958F0FF";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -449,15 +478,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: James Weinert";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "36AB78F2-3FD2-4B41-AF31-70EAAFBD0240";
 				SDKROOT = iphoneos;
 			};
 			name = Release;

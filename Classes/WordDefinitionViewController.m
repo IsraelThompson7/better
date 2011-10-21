@@ -110,6 +110,9 @@
                 [wordText appendFormat: @"Examples:\n%@", [strings componentsJoinedByString: @"\n\n"]];
             }
             
+            /* linking to wordnik.com */
+            [wordText appendString:[NSString stringWithFormat:@"\n\nhttp://www.wordnik.com/words/%@", wordToLookup.word]];
+            
             wordDefinitionView.text = wordText;
             [SVProgressHUD dismiss];
         }
