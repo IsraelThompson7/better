@@ -1,11 +1,11 @@
 #Images
-Images/Icons/**/*
-Images/Launch/**/*
-Images/Misc/**/*
-Images/TabBar/**/*
+Images/Icons/*
+Images/Launch/*
+Images/Misc/*
+Images/TabBar/*
 
 #Libraries
-External/GoogleAdMobAdsSDK/**/*
+External/GoogleAdMobAdsSDK/*
 
 #Xcode
 .DS_Store
