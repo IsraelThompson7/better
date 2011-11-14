@@ -73,7 +73,6 @@
             }
         }
     }
-    [request release];
 }
 
 
@@ -104,7 +103,6 @@
         
         [context save:&error];
     }
-    [request release];
 }
 
 
@@ -135,8 +133,6 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         
         [alert show];
-        [alert release];
-        [message release];
 		
 	} else {
         if ([listObjects count] > 0) {
@@ -165,8 +161,6 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         
         [alert show];
-        [alert release];
-        [message release];
 		
 	} else {
         if ([wordObjects count] > 0) {
@@ -186,7 +180,6 @@
         
         [context save:&error];
     }
- 	[request release];
     return word;
 }
 
@@ -201,7 +194,7 @@
 	
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SearchCellIdentifier];
 	if (cell == nil) {
-		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:SearchCellIdentifier] autorelease];
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:SearchCellIdentifier];
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	}
 	if([searchResults objectAtIndex:indexPath.row] != nil)
@@ -223,7 +216,6 @@
 	
 	wordDefViewController.wordToLookup = word;
     [self.navigationController pushViewController:wordDefViewController animated:YES];
-    [wordDefViewController release];
 }
 
 
@@ -238,7 +230,6 @@
 - (void)finishSearchWithString:(NSString *)searchString {
     /* Cancel any running request */
     [requestTicket_ cancel];
-    [requestTicket_ release];
     requestTicket_ = nil;
     
     /* If word was deleted, simply reset the current result text. */
@@ -261,7 +252,7 @@
 																   maxLength:0
 															 resultCollation:WNAutocompleteWordCollationFrequencyDescending];
     
-    requestTicket_ = [[client autocompletedWordsWithRequest:req] retain];
+    requestTicket_ = [client autocompletedWordsWithRequest:req];
 }
 
 
@@ -269,16 +260,15 @@
 #pragma mark WNClient delegate methods
 
 - (void) client:(WNClient *)client autocompleteWordRequestDidFailWithError:(NSError *)error requestTicket:(WNRequestTicket *) requestTicket {
-    [requestTicket_ release];
     requestTicket_ = nil;
     
     /* Report error */
     NSLog(@"%@ %@, %@", kErrorUnableToCompleteWNRequest, error, [error userInfo]);
-    UIAlertView *alert = [[[UIAlertView alloc] initWithTitle: @"Lookup Failure" 
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Lookup Failure" 
                                                      message: [error localizedFailureReason]
                                                     delegate: nil 
                                            cancelButtonTitle: @"OK" 
-                                           otherButtonTitles: nil] autorelease];
+                                           otherButtonTitles: nil];
     [alert show];
 }
 
@@ -289,11 +279,10 @@
         return;
     
     /* Drop saved reference to the request ticket */
-    [requestTicket_ release];
     requestTicket_ = nil;
     
     /* Display results */
-    searchResults = [response.words retain];
+    searchResults = response.words;
     [self.searchDisplayController.searchResultsTableView reloadData];
 }
 
@@ -316,11 +305,6 @@
 }
 
 
-- (void)dealloc {
-    [imageView release];
-	[searchResults release];
-    [super dealloc];
-}
 
 
 @end

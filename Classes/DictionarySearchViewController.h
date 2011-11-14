@@ -19,8 +19,8 @@
 	
 	NSArray *searchResults;
 }
-@property (nonatomic, retain) IBOutlet UIImageView *imageView;
-@property (nonatomic, retain) NSArray *searchResults;
+@property (nonatomic, strong) IBOutlet UIImageView *imageView;
+@property (nonatomic, strong) NSArray *searchResults;
 
 - (void)loadSearchBarState;
 - (void)saveSearchBarState;

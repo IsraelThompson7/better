@@ -18,6 +18,13 @@
 #import "Word.h"
 
 
+@interface NSArray (WNAdditions)
+
+- (NSArray *)wn_map:(id (^)(id obj))block;
+
+@end
+
+
 @implementation WordDefinitionViewController
 
 @synthesize wordDefinitionView, wordToLookup;
@@ -35,7 +42,6 @@
                                                                                      action:@selector(addWordToList:)];
 
     self.navigationItem.rightBarButtonItem = addToListButton;
-    [addToListButton release];
 }
 
 
@@ -132,8 +138,6 @@
     
     [self.navigationController presentModalViewController:navigationController animated:YES];
 
-    [listSelViewController release];
-    [navigationController release];
 }
 
 
@@ -152,11 +156,6 @@
 }
 
 
-- (void)dealloc {
-    [super dealloc];
-	[wordDefinitionView release];
-	[wordToLookup release];
-}
 
 
 @end

@@ -20,7 +20,6 @@
     [self willChangeValueForKey:@"listContents" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
     [[self primitiveValueForKey:@"listContents"] addObject:value];
     [self didChangeValueForKey:@"listContents" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
-    [changedObjects release];
 }
 
 - (void)removeListContentsObject:(Word *)value {
@@ -28,7 +27,6 @@
     [self willChangeValueForKey:@"listContents" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
     [[self primitiveValueForKey:@"listContents"] removeObject:value];
     [self didChangeValueForKey:@"listContents" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
-    [changedObjects release];
 }
 
 - (void)addListContents:(NSSet *)value {    

@@ -14,7 +14,7 @@
 @interface ListSelectViewController : ListViewController {
     Word *word;
 }
-@property (nonatomic, retain) Word *word;
+@property (nonatomic, strong) Word *word;
 
 - (IBAction)dismissAction:(id)sender;
 @end

@@ -29,7 +29,6 @@
                                                                                      target:self 
                                                                                      action:@selector(dismissAction:)];
     self.navigationItem.leftBarButtonItem = dismissButton;
-    [dismissButton release];
 }
 
 
@@ -53,7 +52,7 @@
         static NSString *NewCellIdentifier = @"NewListCell";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NewCellIdentifier];
         if (cell == nil) {
-            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NewCellIdentifier] autorelease];
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NewCellIdentifier];
         }
         
         cell.textLabel.text = @"Add New List";
@@ -103,7 +102,6 @@
                                                                                        target:self 
                                                                                        action:@selector(dismissAction:)];
         [self.navigationItem setLeftBarButtonItem:dismissButton animated:YES];
-        [dismissButton release];
     }      
 	
 	[self.tableView beginUpdates];
@@ -137,8 +135,6 @@
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
             
             [alert show];
-            [alert release];
-            [message release];
 		}
 	}
 
@@ -195,8 +191,6 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         
         [alert show];
-        [alert release];
-        [message release];
     }
     
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -215,10 +209,6 @@
 }
 
 
-- (void)dealloc {
-    [word release];
-    [super dealloc];
-}
 
 
 @end

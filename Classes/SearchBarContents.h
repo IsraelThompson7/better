@@ -13,7 +13,7 @@
 @interface SearchBarContents : NSManagedObject {
 @private
 }
-@property (nonatomic, retain) NSString * savedSearchString;
-@property (nonatomic, retain) NSNumber * searchWasActive;
+@property (nonatomic, strong) NSString * savedSearchString;
+@property (nonatomic, strong) NSNumber * searchWasActive;
 
 @end

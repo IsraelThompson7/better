@@ -14,8 +14,8 @@
 	UITextView *wordDefinitionView;
 	Word *wordToLookup;
 }
-@property (nonatomic, retain) IBOutlet UITextView *wordDefinitionView;
-@property (nonatomic, retain) Word *wordToLookup;
+@property (nonatomic, strong) IBOutlet UITextView *wordDefinitionView;
+@property (nonatomic, strong) Word *wordToLookup;
 
 
 - (void)updateDefinition;

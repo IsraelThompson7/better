@@ -14,9 +14,9 @@
 @interface List : NSManagedObject {
 @private
 }
-@property (nonatomic, retain) NSString * listName;
-@property (nonatomic, retain) NSNumber * listIndex;
-@property (nonatomic, retain) NSSet* listContents;
+@property (nonatomic, strong) NSString * listName;
+@property (nonatomic, strong) NSNumber * listIndex;
+@property (nonatomic, strong) NSSet* listContents;
 
 - (void)addListContentsObject:(Word *)value;
 - (void)removeListContentsObject:(Word *)value;

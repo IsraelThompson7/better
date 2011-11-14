@@ -409,11 +409,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/External/wordkit/frameworks/objective-c/Wordnik WordKit 1.0/iOS Framework\"",
 					"\"$(SRCROOT)/External/wordkit/frameworks/objective-c/Wordnik WordKit 1.02/iOS Framework\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -430,6 +430,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = StudyDictionary;
 				PROVISIONING_PROFILE = "";
+				WARNING_CFLAGS = "-Wall";
 			};
 			name = Debug;
 		};
@@ -437,11 +438,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/External/wordkit/frameworks/objective-c/Wordnik WordKit 1.0/iOS Framework\"",
 					"\"$(SRCROOT)/External/wordkit/frameworks/objective-c/Wordnik WordKit 1.02/iOS Framework\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -457,6 +458,7 @@
 				PRODUCT_NAME = StudyDictionary;
 				PROVISIONING_PROFILE = "";
 				VALIDATE_PRODUCT = YES;
+				WARNING_CFLAGS = "-Wall";
 			};
 			name = Release;
 		};

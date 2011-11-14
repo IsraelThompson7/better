@@ -79,8 +79,6 @@
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
                                   
             [alert show];
-            [alert release];
-            [message release];
         } 
     }
 }    
@@ -106,8 +104,6 @@
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
             
             [alert show];
-            [alert release];
-            [message release];
         }
         
         NSMutableString *output = [NSMutableString string];
@@ -197,8 +193,6 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         
         [alert show];
-        [alert release];
-        [message release];
     }    
     
     return persistentStoreCoordinator_;
@@ -230,19 +224,6 @@
 }
 
 
-- (void)dealloc {
-    
-    [managedObjectContext_ release];
-    [managedObjectModel_ release];
-    [persistentStoreCoordinator_ release];
-    
-    [wordnikClient_ release];
-    
-	[tabBarController release];
-    [window release];
-    
-    [super dealloc];
-}
 
 
 @end

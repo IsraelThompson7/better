@@ -20,7 +20,6 @@
     [self willChangeValueForKey:@"belongsToList" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
     [[self primitiveValueForKey:@"belongsToList"] addObject:value];
     [self didChangeValueForKey:@"belongsToList" withSetMutation:NSKeyValueUnionSetMutation usingObjects:changedObjects];
-    [changedObjects release];
 }
 
 - (void)removeBelongsToListObject:(List *)value {
@@ -28,7 +27,6 @@
     [self willChangeValueForKey:@"belongsToList" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
     [[self primitiveValueForKey:@"belongsToList"] removeObject:value];
     [self didChangeValueForKey:@"belongsToList" withSetMutation:NSKeyValueMinusSetMutation usingObjects:changedObjects];
-    [changedObjects release];
 }
 
 - (void)addBelongsToList:(NSSet *)value {    

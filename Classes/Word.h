@@ -14,9 +14,9 @@
 @interface Word : NSManagedObject {
 @private
 }
-@property (nonatomic, retain) NSNumber * lookupCount;
-@property (nonatomic, retain) NSString * word;
-@property (nonatomic, retain) NSSet* belongsToList;
+@property (nonatomic, strong) NSNumber * lookupCount;
+@property (nonatomic, strong) NSString * word;
+@property (nonatomic, strong) NSSet* belongsToList;
 
 - (void)addBelongsToListObject:(List *)value;
 - (void)removeBelongsToListObject:(List *)value;

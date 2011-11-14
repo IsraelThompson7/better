@@ -40,7 +40,6 @@
         }
     }
     
-	[request release];
     
     entityDescription = [NSEntityDescription entityForName:kWordEntityName inManagedObjectContext:context];
 	request = [[NSFetchRequest alloc] init];
@@ -61,7 +60,6 @@
         }
     }
     
-	[request release];
 }
 
 @end

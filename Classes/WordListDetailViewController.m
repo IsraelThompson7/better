@@ -53,13 +53,9 @@
     
     [listObjects sortUsingDescriptors:sortDescriptors];
     
-    [sortDescriptor release];
-    [sortDescriptors release];
     
-    if (listContents != nil) [listContents release];
     listContents = [[NSMutableArray alloc] initWithArray:listObjects];
     
-    [listObjects release];
     
 	[self.tableView reloadData];
 }
@@ -84,7 +80,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     }
     
 	NSUInteger row = [indexPath row]; 
@@ -122,8 +118,6 @@
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
             
             [alert show];
-            [alert release];
-            [message release];
 		}
     }  
 }
@@ -141,7 +135,6 @@
     Word *word = [listContents objectAtIndex:row];
 	wordDefViewController.wordToLookup = word;
     [self.navigationController pushViewController:wordDefViewController animated:YES];
-    [wordDefViewController release];
 
 }
 
@@ -159,10 +152,6 @@
 }
 
 
-- (void)dealloc {
-	[listContents release];
-    [super dealloc];
-}
 
 
 @end

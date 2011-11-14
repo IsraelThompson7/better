@@ -11,12 +11,12 @@
 @class EditableTableViewCell;
 
 @interface ListViewController : UITableViewController <UITextFieldDelegate> {
-    EditableTableViewCell *editableTableViewCell;
+    EditableTableViewCell *__unsafe_unretained editableTableViewCell;
 	NSMutableArray *lists;
     BOOL didViewJustLoad;
 }
-@property (nonatomic, assign) IBOutlet EditableTableViewCell *editableTableViewCell;
-@property (nonatomic, retain) NSMutableArray *lists;
+@property (nonatomic, unsafe_unretained) IBOutlet EditableTableViewCell *editableTableViewCell;
+@property (nonatomic, strong) NSMutableArray *lists;
 
 - (void)loadLists;
 - (void)insertListAnimated:(BOOL)animated;

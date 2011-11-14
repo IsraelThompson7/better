@@ -66,8 +66,6 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         
         [alert show];
-        [alert release];
-        [message release];
 		
 	} else {	
         NSMutableArray *listObjects = [[NSMutableArray alloc] init];
@@ -76,14 +74,10 @@
             [listObjects addObject:oneObject];
         }
         
-        if (lists != nil) [lists release];
         lists = [[NSMutableArray alloc] initWithArray:listObjects];
         
-        [listObjects release];
     }
     
-	[request release];
-    [sortDescriptor release];
 	
 	[self.tableView reloadData];
 }
@@ -114,7 +108,7 @@
         static NSString *NewCellIdentifier = @"NewListCell";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NewCellIdentifier];
         if (cell == nil) {
-            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NewCellIdentifier] autorelease];
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NewCellIdentifier];
         }
         
         cell.textLabel.text = @"Add New List";
@@ -238,8 +232,6 @@
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
             
             [alert show];
-            [alert release];
-            [message release];
 		}
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         [self insertListAnimated:YES];
@@ -292,7 +284,6 @@
     List *list = [lists objectAtIndex:row];
 	wordListViewController.list = list;
     [self.navigationController pushViewController:wordListViewController animated:YES];
-    [wordListViewController release];
     
 }
 
@@ -310,7 +301,7 @@
             finalListText = @"Unnamed Word List";
         }
         
-        NSString *tempListText = [[[NSString alloc] initWithString:finalListText] autorelease];
+        NSString *tempListText = [[NSString alloc] initWithString:finalListText];
         int i = 1;
         BOOL hasSameName;
         do {
@@ -349,10 +340,6 @@
 }
 
 
-- (void)dealloc {
-	[lists release];
-    [super dealloc];
-}
 
 
 @end

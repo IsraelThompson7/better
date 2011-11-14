@@ -15,8 +15,8 @@
 	NSMutableArray *listContents;
     BOOL didViewJustLoad;
 }
-@property (nonatomic, retain) NSMutableArray *listContents;
-@property (nonatomic, retain) List *list;
+@property (nonatomic, strong) NSMutableArray *listContents;
+@property (nonatomic, strong) List *list;
 
 - (void)loadWordList;
 

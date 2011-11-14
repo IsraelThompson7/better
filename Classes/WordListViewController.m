@@ -69,8 +69,6 @@
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
             
             [alert show];
-            [alert release];
-            [message release];
 		}
 	}
     
@@ -88,9 +86,6 @@
 }
 
 
-- (void)dealloc {
-    [super dealloc];
-}
 
 
 @end
